@@ -1,0 +1,28 @@
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\bin\Debug\net6.0-windows\Atelier des Mots.exe
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\bin\Debug\net6.0-windows\Atelier des Mots.dll
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Atelier des Mots.csproj.AssemblyReference.cache
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Resources\Styles.baml
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Views\MainWindow.baml
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Views\PhraseExercisePreparationView.baml
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Views\StudentExerciceView.baml
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Views\SyllableExercisePreparationView.baml
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\App.baml
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Views\MainWindow.g.cs
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Views\PhraseExercisePreparationView.g.cs
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Views\StudentExerciceView.g.cs
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Views\SyllableExercisePreparationView.g.cs
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Atelier des Mots_MarkupCompile.cache
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Atelier des Mots.g.resources
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Atelier des Mots.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Atelier des Mots.AssemblyInfoInputs.cache
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Atelier des Mots.AssemblyInfo.cs
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Atelier des Mots.csproj.CoreCompileInputs.cache
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Atelier des Mots.dll
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\refint\Atelier des Mots.dll
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Atelier des Mots.pdb
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\bin\Debug\net6.0-windows\Atelier des Mots.deps.json
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\bin\Debug\net6.0-windows\Atelier des Mots.runtimeconfig.json
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\bin\Debug\net6.0-windows\Atelier des Mots.pdb
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Atelier des Mots.genruntimeconfig.cache
+C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\ref\Atelier des Mots.dll

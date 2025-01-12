@@ -1,0 +1,18 @@
+﻿<Window x:Class="Atelier_des_Mots.Views.PhraseExercisePreparationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Prepare Disordered Phrase Exercise" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="Enter Phrase in Correct Order:" FontSize="16" Margin="0,0,0,10"/>
+            <TextBox Name="CorrectPhraseInput" FontSize="16" Margin="0,0,0,10"/>
+
+            <Button Content="Disorder Phrase" Click="DisorderPhrase_Click" Width="200" Margin="10"/>
+
+            <TextBlock Text="Disordered Phrase:" FontSize="16" Margin="20,10,0,0"/>
+            <TextBox Name="DisorderedPhraseOutput" FontSize="16" Margin="0,0,0,10" IsReadOnly="True"/>
+
+            <Button Content="Display to Students" Click="DisplayToStudents_Click" Width="200" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

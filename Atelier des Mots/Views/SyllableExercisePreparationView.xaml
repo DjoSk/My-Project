@@ -1,0 +1,14 @@
+﻿<Window x:Class="Atelier_des_Mots.Views.SyllableExercisePreparationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Prepare Syllable Exercise" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="Enter Word in Syllables (hyphen-separated):" FontSize="16" Margin="0,0,0,10"/>
+            <TextBox Name="SyllableInput" FontSize="16" Margin="0,0,0,10" TextChanged="SyllableInput_TextChanged"/>
+            <TextBlock Text="Word (without hyphens):" FontSize="16" Margin="0,20,0,10"/>
+            <TextBox Name="WordOutput" FontSize="16" Margin="0,0,0,10" IsReadOnly="True"/>
+            <Button Content="Display to Students" Click="DisplayToStudents_Click" Width="200" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>
