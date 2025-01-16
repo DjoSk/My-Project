@@ -1,28 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Amin Sekri\\Desktop\\Atelier des Mots\\Atelier des Mots\\Atelier des Mots\\Atelier des Mots.csproj": {}
+    "D:\\Project1\\Atelier des Mots\\Atelier des Mots.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Amin Sekri\\Desktop\\Atelier des Mots\\Atelier des Mots\\Atelier des Mots\\Atelier des Mots.csproj": {
+    "D:\\Project1\\Atelier des Mots\\Atelier des Mots.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Amin Sekri\\Desktop\\Atelier des Mots\\Atelier des Mots\\Atelier des Mots\\Atelier des Mots.csproj",
+        "projectUniqueName": "D:\\Project1\\Atelier des Mots\\Atelier des Mots.csproj",
         "projectName": "Atelier des Mots",
-        "projectPath": "C:\\Users\\Amin Sekri\\Desktop\\Atelier des Mots\\Atelier des Mots\\Atelier des Mots\\Atelier des Mots.csproj",
-        "packagesPath": "C:\\Users\\Amin Sekri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Amin Sekri\\Desktop\\Atelier des Mots\\Atelier des Mots\\Atelier des Mots\\obj\\",
+        "projectPath": "D:\\Project1\\Atelier des Mots\\Atelier des Mots.csproj",
+        "packagesPath": "C:\\Users\\jihed\\.nuget\\packages\\",
+        "outputPath": "D:\\Project1\\Atelier des Mots\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Amin Sekri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\jihed\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows7.0"
+          "net6.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -49,7 +45,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -61,7 +58,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

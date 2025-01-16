@@ -4,10 +4,12 @@
         Title="Prepare Syllable Exercise" Height="450" Width="800">
     <Grid>
         <StackPanel Margin="20">
-            <TextBlock Text="Enter Word in Syllables (hyphen-separated):" FontSize="16" Margin="0,0,0,10"/>
+            <TextBlock Text="Enter Words in Syllables (hyphen-separated):" FontSize="16" Margin="0,0,0,10"/>
             <TextBox Name="SyllableInput" FontSize="16" Margin="0,0,0,10" TextChanged="SyllableInput_TextChanged"/>
-            <TextBlock Text="Word (without hyphens):" FontSize="16" Margin="0,20,0,10"/>
+            <TextBlock Text="Words (without hyphens):" FontSize="16" Margin="0,20,0,10"/>
             <TextBox Name="WordOutput" FontSize="16" Margin="0,0,0,10" IsReadOnly="True"/>
+
+            <!-- Display to Students Button (kept intact) -->
             <Button Content="Display to Students" Click="DisplayToStudents_Click" Width="200" Margin="10"/>
         </StackPanel>
     </Grid>

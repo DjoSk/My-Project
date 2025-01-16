@@ -1,5 +1,8 @@
 ﻿using Atelier_des_Mots.ViewModels;
+using System;
+using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Atelier_des_Mots.Views
 {
@@ -15,15 +18,34 @@ namespace Atelier_des_Mots.Views
         }
 
         // Update the WordOutput text box as the teacher types
-        private void SyllableInput_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        private void SyllableInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             string syllables = SyllableInput.Text;
 
-            // Remove hyphens to display the word without them
-            string wordWithoutHyphens = syllables.Replace("-", "");
+            // Process each word separated by space
+            var words = syllables.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-            // Set the WordOutput TextBox to show the word without hyphens
-            WordOutput.Text = wordWithoutHyphens;
+            // For each word, remove the hyphens
+            var wordsWithoutHyphens = words.Select(word => word.Replace("-", "")).ToArray();
+
+            // Set the WordOutput TextBox to show the words without hyphens
+            WordOutput.Text = string.Join(" ", wordsWithoutHyphens);
+        }
+
+        // Method to shuffle the syllables of a word
+        private string[] ShuffleSyllables(string[] syllables)
+        {
+            Random rng = new Random();
+            int n = syllables.Length;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                var value = syllables[k];
+                syllables[k] = syllables[n];
+                syllables[n] = value;
+            }
+            return syllables;
         }
 
         // Prepare the syllables exercise and display to students
@@ -31,13 +53,32 @@ namespace Atelier_des_Mots.Views
         {
             string syllables = SyllableInput.Text;
 
-            // Store the word and syllables in the ViewModel
-            _viewModel.CorrectWord = syllables.Replace("-", ""); // Word without hyphens
-            _viewModel.DisplaySyllables = syllables.Split('-'); // Syllables are split by hyphens
+            if (string.IsNullOrWhiteSpace(syllables))
+            {
+                MessageBox.Show("Please enter words in syllables before displaying to students.", "Input Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
 
-            // Show student view, passing the ViewModel
+            // Process each word separated by space
+            var words = syllables.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Flatten syllables and shuffle them
+            var syllablesList = words.SelectMany(word => word.Split('-')).ToArray();
+            var shuffledSyllables = ShuffleSyllables(syllablesList);
+
+            // Update ViewModel with correct words and shuffled syllables
+            _viewModel.CorrectWord = string.Join(" ", words.Select(word => word.Replace("-", ""))); // Words without hyphens
+            _viewModel.DisplaySyllables = shuffledSyllables; // Shuffled syllables list
+            _viewModel.AssembledWord = _viewModel.CorrectWord; // Save assembled word to ViewModel
+
+            // Show the student view and pass the ViewModel
             StudentExerciseView studentView = new StudentExerciseView(_viewModel);
             studentView.Show();
+
+            // Optionally clear input after displaying
+            SyllableInput.Clear();
         }
+
+
     }
 }

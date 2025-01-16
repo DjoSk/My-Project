@@ -24,6 +24,7 @@ namespace Atelier_des_Mots.ViewModels
         // Property for storing the assembled word from selected syllables
         public string AssembledWord { get; set; }
 
+
         // Constructor to initialize the ViewModel with empty data
         public TeacherViewModel()
         {

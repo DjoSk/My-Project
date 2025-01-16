@@ -7,7 +7,9 @@
             <TextBlock Text="Choose Exercise Type" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
             <!-- Buttons to select exercise type -->
-            <Button Content="Syllables Exercise" Click="SyllablesExercise_Click" Width="200" Margin="10"/>
+            <Button Content="Syllables Only Exercise" Click="SyllablesOnlyExercise_Click" Width="200" Margin="10"/>
+
+            <Button Content="Syllables Word Exercise" Click="SyllablesExercise_Click" Width="200" Margin="10"/>
             <Button Content="Disordered Phrase Exercise" Click="DisorderedPhraseExercise_Click" Width="200" Margin="10"/>
         </StackPanel>
     </Grid>

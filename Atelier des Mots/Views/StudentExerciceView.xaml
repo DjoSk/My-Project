@@ -3,27 +3,89 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Student Exercise" Height="600" Width="800">
 
+    <!-- Background Image -->
     <Window.Background>
-        <ImageBrush ImageSource="Resources/Images/BackgroundWordsFlying.jpg" />
+        <ImageBrush ImageSource="D:\Project1\Atelier des Mots\Views\Resources\Images\BackgroundWordsFlying.jpg" />
     </Window.Background>
 
-    <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
-            <!-- Syllables Area -->
-            <WrapPanel Name="SyllableContainer" HorizontalAlignment="Center" Margin="0,0,0,20" />
+    <Window.Resources>
+        <!-- Flip Animation Storyboard -->
+        <Storyboard x:Key="FlipCardAnimation">
+            <!-- Rotate along Y-axis -->
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)" 
+                             From="0" To="180" Duration="0:0:0.3" />
+        </Storyboard>
+    </Window.Resources>
 
-            <!-- Selected Syllable Display Area -->
-            <Border Name="SelectedSyllableDisplay" Background="LightCoral" BorderBrush="Black" BorderThickness="2" Width="400" Height="80" Margin="0,0,0,20">
-                <TextBlock Name="SelectedSyllableText" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
-            </Border>
+    <!-- Wrap the entire content in a ScrollViewer for vertical scrolling -->
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Grid>
+            <!-- Syllables Only Exercise -->
+            <StackPanel Name="SyllablesOnlyExercisePanel" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Visibility="Collapsed">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="700">
+                    <WrapPanel Name="SyllablesOnlyContainer" HorizontalAlignment="Center" Margin="0,0,0,10">
+                        <!-- Buttons will be added dynamically -->
+                    </WrapPanel>
+                </ScrollViewer>
+            </StackPanel>
 
-            <!-- Assemble Button -->
-            <Button Content="Assemble Word" Click="AssembleWord_Click" Width="200" FontSize="16" FontWeight="Bold" Background="LightGreen" Margin="0,0,0,20" />
+            <!-- Syllable Exercise -->
+            <StackPanel Name="SyllableExercisePanel" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20" Visibility="Visible">
+<ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="357">
+                    <!-- Change StackPanel to WrapPanel for horizontal layout -->
+                    <WrapPanel Name="SyllableContainer" HorizontalAlignment="Center" Margin="0,0,0,20">
+                        <!-- Syllables will be added dynamically here -->
+                    </WrapPanel>
+                </ScrollViewer>
 
-            <!-- Full Word Display Area -->
-            <Border Name="WordAssemblyDisplay" Background="LightYellow" BorderBrush="Black" BorderThickness="2" Width="500" Height="100" Margin="0">
-                <TextBlock Name="AssembledWordText" FontSize="28" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" />
-            </Border>
-        </StackPanel>
-    </Grid>
+                <!-- Assemble Button -->
+                <Button Content="Assemble Word" Click="AssembleSyllable_Click" Width="300" FontSize="20" FontWeight="Bold" Background="LightGreen" Margin="0,0,0,20" />
+
+                <!-- Assembled Word Display -->
+                <Border Name="SyllableWordAssemblyDisplay" Background="LightYellow" BorderBrush="Black" BorderThickness="2" Width="750" Height="257" Margin="0">
+                    <TextBlock Name="SyllableAssembledWordText"
+               FontSize="100"
+               FontWeight="Bold"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               Text="{Binding AssembledWord}" />
+                </Border>
+
+            </StackPanel>
+
+
+            <!-- Phrase Exercise -->
+            <StackPanel Name="PhraseExercisePanel" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20" Visibility="Collapsed">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="500">
+                    <WrapPanel Name="PhraseContainer" HorizontalAlignment="Center" Margin="0,0,0,20">
+                        <!-- Word directly in a box -->
+                        <TextBlock Text="LongWordExample" 
+                                   Background="LightGray" 
+                                   Padding="10" 
+                                   FontSize="28" 
+                                   FontWeight="Bold" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center" />
+                        <TextBlock Text="AnotherWordHere" 
+                                   Background="LightGray" 
+                                   Padding="10" 
+                                   FontSize="28" 
+                                   FontWeight="Bold" 
+                                   VerticalAlignment="Center" 
+                                   HorizontalAlignment="Center" />
+                        <!-- Add more as needed -->
+                    </WrapPanel>
+                </ScrollViewer>
+
+                <!-- Button to Show Correct Phrase -->
+                <Button Name="ShowCorrectPhraseButton" Content="Show Correct Phrase" Click="ShowCorrectPhrase_Click" Width="300" FontSize="20" FontWeight="Bold" Background="LightBlue" Margin="0,0,0,10" />
+
+                <Border Name="PhraseAssemblyDisplay" Background="LightYellow" BorderBrush="Black" BorderThickness="2" Width="700" Height="350" Margin="0">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                        <TextBlock Name="PhraseAssembledText" FontSize="60" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center" />
+                    </ScrollViewer>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
 </Window>

@@ -16,6 +16,9 @@
     <Compile Update="Views\SyllableExercisePreparationView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\SyllablesOnlyExerciceView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Resources\Styles.xaml">
@@ -31,6 +34,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SyllableExercisePreparationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SyllablesOnlyExerciceView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

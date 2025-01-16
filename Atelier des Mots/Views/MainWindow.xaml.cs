@@ -13,8 +13,8 @@ namespace Atelier_des_Mots.Views
         // Opens the Syllable Exercise View for teacher to prepare syllables exercise
         private void SyllablesExercise_Click(object sender, RoutedEventArgs e)
         {
-            SyllableExercisePreparationView syllableView = new SyllableExercisePreparationView();
-            syllableView.Show();
+            SyllableExercisePreparationView syllablePreparationView = new SyllableExercisePreparationView();
+            syllablePreparationView.Show();
         }
 
         // Opens the Disordered Phrase Exercise View for teacher to prepare phrase exercise
@@ -22,6 +22,13 @@ namespace Atelier_des_Mots.Views
         {
             PhraseExercisePreparationView phraseView = new PhraseExercisePreparationView();
             phraseView.Show();
+        }
+
+        // Opens the Syllables Only Exercise View for teacher to prepare syllables only exercise
+        private void SyllablesOnlyExercise_Click(object sender, RoutedEventArgs e)
+        {
+            SyllablesOnlyExercisePreparationView syllablesOnlyView = new SyllablesOnlyExercisePreparationView();
+            syllablesOnlyView.Show();
         }
     }
 }

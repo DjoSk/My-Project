@@ -6,7 +6,6 @@
         <Setter Property="FontFamily" Value="Segoe UI"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Background" Value="#f8f8f8"/>
-        <Setter Property="WindowStartupLocation" Value="CenterScreen"/>
     </Style>
 
     <!-- Button Style -->
