@@ -1,4 +1,5 @@
 ﻿using Atelier_des_Mots.ViewModels;
+using System.Linq;
 using System.Windows;
 
 namespace Atelier_des_Mots.Views
@@ -33,6 +34,7 @@ namespace Atelier_des_Mots.Views
         }
 
         // Prepare the syllables exercise and display to students
+        // Prepare the syllables exercise and display to students
         private void DisplayToStudents_Click(object sender, RoutedEventArgs e)
         {
             string syllablesInput = SyllablesInput.Text;
@@ -44,12 +46,13 @@ namespace Atelier_des_Mots.Views
                 return;
             }
 
-            // Split syllables and store in the ViewModel
-            _viewModel.DisplaySyllables = syllablesInput.Split('-');
+            // Split syllables and store in the ViewModel as a List<string>
+            _viewModel.DisplaySyllables = syllablesInput.Split('-').ToList();
 
             // Show the student view
-            StudentExerciseView studentView = new StudentExerciseView(_viewModel);
+            StudentSyllablesOnlyExerciseView studentView = new StudentSyllablesOnlyExerciseView(_viewModel);
             studentView.Show();
         }
+
     }
 }

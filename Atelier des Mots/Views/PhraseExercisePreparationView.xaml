@@ -3,6 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Prepare Disordered Phrase Exercise" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="D:/Project1/Atelier des Mots/Views/Resources/Images/BackgroundWordsFlying.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
         <StackPanel Margin="20">
             <TextBlock Text="Enter Phrase in Correct Order:" FontSize="16" Margin="0,0,0,10"/>
             <TextBox Name="CorrectPhraseInput" FontSize="16" Margin="0,0,0,10"/>

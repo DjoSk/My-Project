@@ -3,6 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Prepare Syllables Only Exercise" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="D:/Project1/Atelier des Mots/Views/Resources/Images/BackgroundWordsFlying.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
         <StackPanel Margin="20">
             <TextBlock Text="Enter Syllables (separate with hyphens '-')" FontSize="16" Margin="0,0,0,10"/>
             <TextBox Name="SyllablesInput" FontSize="16" Margin="0,0,0,10" TextChanged="SyllablesInput_TextChanged"/>

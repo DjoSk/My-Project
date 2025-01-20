@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Project1\Atelier des Mots\App.xaml
-6484649692
+8-1642657593
 
-131799608296
+151292942421
 1941709816142
-Resources\Styles.xaml;Views\MainWindow.xaml;Views\PhraseExercisePreparationView.xaml;Views\StudentExerciceView.xaml;Views\SyllableExercisePreparationView.xaml;Views\SyllablesOnlyExerciceView.xaml;
+Resources\Styles.xaml;Views\MainWindow.xaml;Views\PhraseExercisePreparationView.xaml;Views\StudentPhraseExerciseView.xaml;Views\StudentSyllableExerciseView.xaml;Views\StudentSyllablesOnlyExerciseView.xaml;Views\SyllableExercisePreparationView.xaml;Views\SyllablesOnlyExerciceView.xaml;
 
 False
 

@@ -15,6 +15,8 @@ namespace Atelier_des_Mots.Views
             InitializeComponent();
             _viewModel = new TeacherViewModel();
             DataContext = _viewModel;
+
+
         }
 
         // Update the WordOutput text box as the teacher types
@@ -48,6 +50,7 @@ namespace Atelier_des_Mots.Views
             return syllables;
         }
 
+
         // Prepare the syllables exercise and display to students
         private void DisplayToStudents_Click(object sender, RoutedEventArgs e)
         {
@@ -67,17 +70,20 @@ namespace Atelier_des_Mots.Views
             var shuffledSyllables = ShuffleSyllables(syllablesList);
 
             // Update ViewModel with correct words and shuffled syllables
+            _viewModel.Words = words; // Store all words
+            _viewModel.SetCurrentWord(0); // Start with the first word
             _viewModel.CorrectWord = string.Join(" ", words.Select(word => word.Replace("-", ""))); // Words without hyphens
-            _viewModel.DisplaySyllables = shuffledSyllables; // Shuffled syllables list
-            _viewModel.AssembledWord = _viewModel.CorrectWord; // Save assembled word to ViewModel
 
             // Show the student view and pass the ViewModel
-            StudentExerciseView studentView = new StudentExerciseView(_viewModel);
+            StudentSyllableExerciseView studentView = new StudentSyllableExerciseView(_viewModel);
             studentView.Show();
 
             // Optionally clear input after displaying
             SyllableInput.Clear();
         }
+
+
+
 
 
     }

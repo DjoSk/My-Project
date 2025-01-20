@@ -10,7 +10,13 @@
     <Compile Update="Views\PhraseExercisePreparationView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\StudentExerciceView.xaml.cs">
+    <Compile Update="Views\StudentPhraseExerciseView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\StudentSyllableExerciseView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\StudentSyllablesOnlyExerciseView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\SyllableExercisePreparationView.xaml.cs">
@@ -30,7 +36,13 @@
     <Page Update="Views\PhraseExercisePreparationView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\StudentExerciceView.xaml">
+    <Page Update="Views\StudentPhraseExerciseView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\StudentSyllableExerciseView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\StudentSyllablesOnlyExerciseView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SyllableExercisePreparationView.xaml">

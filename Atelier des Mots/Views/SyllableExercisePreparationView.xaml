@@ -3,13 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Prepare Syllable Exercise" Height="450" Width="800">
     <Grid>
+        <!-- Remove the Background attribute here, and only keep the Grid.Background section -->
+        <Grid.Background>
+            <ImageBrush ImageSource="D:/Project1/Atelier des Mots/Views/Resources/Images/BackgroundWordsFlying.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+
         <StackPanel Margin="20">
             <TextBlock Text="Enter Words in Syllables (hyphen-separated):" FontSize="16" Margin="0,0,0,10"/>
             <TextBox Name="SyllableInput" FontSize="16" Margin="0,0,0,10" TextChanged="SyllableInput_TextChanged"/>
             <TextBlock Text="Words (without hyphens):" FontSize="16" Margin="0,20,0,10"/>
             <TextBox Name="WordOutput" FontSize="16" Margin="0,0,0,10" IsReadOnly="True"/>
 
-            <!-- Display to Students Button (kept intact) -->
+            <!-- Display to Students Button -->
             <Button Content="Display to Students" Click="DisplayToStudents_Click" Width="200" Margin="10"/>
         </StackPanel>
     </Grid>

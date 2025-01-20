@@ -8,4 +8,24 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Views\Resources\Images\BackgroundWordsFlying.jpg" />
+    <None Remove="Views\Resources\Images\Kid1.jpg" />
+    <None Remove="Views\Resources\Images\Kid2.jpg" />
+    <None Remove="Views\Resources\Images\Kid3.jpg" />
+    <None Remove="Views\Resources\Images\Kid4.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\Resources\Images\BackgroundWordsFlying.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Resources\Images\Kid1.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Resources\Images\Kid2.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

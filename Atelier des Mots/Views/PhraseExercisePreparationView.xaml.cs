@@ -40,7 +40,7 @@ namespace Atelier_des_Mots.Views
             _viewModel.DisorderedWords = disorderedPhrase.Split(' ');
 
             // Show student view
-            StudentExerciseView studentView = new StudentExerciseView(_viewModel);
+            StudentPhraseExerciseView studentView = new StudentPhraseExerciseView(_viewModel);
             studentView.Show();
         }
     }

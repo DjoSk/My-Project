@@ -1,0 +1,20 @@
+﻿<Window x:Class="Atelier_des_Mots.Views.StudentSyllablesOnlyExerciseView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Syllables Only Exercise" Height="600" Width="800">
+
+    <!-- Background Image -->
+    <Window.Background>
+        <ImageBrush ImageSource="D:/Project1/Atelier des Mots/Views/Resources/Images/Kid1.jpg" />
+    </Window.Background>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="700">
+                <WrapPanel Name="SyllablesOnlyContainer" HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <!-- Buttons will be added dynamically -->
+                </WrapPanel>
+            </ScrollViewer>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
