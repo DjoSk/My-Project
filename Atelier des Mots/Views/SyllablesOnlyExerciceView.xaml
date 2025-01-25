@@ -1,19 +1,19 @@
 ﻿<Window x:Class="Atelier_des_Mots.Views.SyllablesOnlyExercisePreparationView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Prepare Syllables Only Exercise" Height="450" Width="800">
+        Title="Exercice de préparation des syllabes uniquement" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="D:/Project1/Atelier des Mots/Views/Resources/Images/BackgroundWordsFlying.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Class.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <StackPanel Margin="20">
-            <TextBlock Text="Enter Syllables (separate with hyphens '-')" FontSize="16" Margin="0,0,0,10"/>
+            <TextBlock Text="Entrez les syllabes (séparez-les par des tirets « - »)" FontSize="16" Margin="0,0,0,10"/>
             <TextBox Name="SyllablesInput" FontSize="16" Margin="0,0,0,10" TextChanged="SyllablesInput_TextChanged"/>
 
-            <TextBlock Text="Syllables Preview:" FontSize="16" Margin="0,20,0,10"/>
+            <TextBlock Text="Aperçu des syllabes:" FontSize="16" Margin="0,20,0,10"/>
             <TextBlock Name="SyllablesPreview" FontSize="16" Margin="0,0,0,10" TextWrapping="Wrap"/>
 
-            <Button Content="Display to Students" Click="DisplayToStudents_Click" Width="200" Margin="10"/>
+            <Button Content="Affichage aux étudiants" Click="DisplayToStudents_Click" Width="200" Margin="10"/>
         </StackPanel>
     </Grid>
 </Window>

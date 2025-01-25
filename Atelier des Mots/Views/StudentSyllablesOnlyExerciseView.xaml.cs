@@ -43,33 +43,43 @@ namespace Atelier_des_Mots.Views
         {
             var border = new Border
             {
-                Background = Brushes.LightCoral,
                 BorderBrush = Brushes.Black,
                 BorderThickness = new Thickness(2),
-                Width = 240,
+                Width = 260,
                 Height = 180,
                 Margin = new Thickness(10),
                 Tag = syllable
             };
 
+            // Initial image as the background
             var image = new Image
             {
-                Source = new BitmapImage(new Uri("D:/Project1/Atelier des Mots/Views/Resources/Images/Kid1.jpg")),
+                Source = new BitmapImage(new Uri("pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Kid11.jpg")),
                 Stretch = Stretch.Fill,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center
             };
 
-
             border.Child = image;
+
+            // Handle clicks to reveal the syllable
             border.MouseDown += (s, e) =>
             {
-                var b = s as Border;
-                var syllableText = b.Tag.ToString();
-                b.Child = new TextBlock
+                var clickedBorder = s as Border;
+                var syllableText = clickedBorder.Tag.ToString();
+
+                // Change the background to a new image
+                clickedBorder.Background = new ImageBrush
+                {
+                    ImageSource = new BitmapImage(new Uri("pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Syllabe2.jpeg"))
+                };
+
+
+                // Display the syllable text over the new background
+                clickedBorder.Child = new TextBlock
                 {
                     Text = syllableText,
-                    FontSize = 100,
+                    FontSize = 82,
                     FontWeight = FontWeights.Bold,
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Center
@@ -83,36 +93,40 @@ namespace Atelier_des_Mots.Views
 
 
 
+
         private void PlaySound()
         {
-            _player.Open(new Uri("D:/Project1/Atelier des Mots/Views/Resources/Sounds/Music.mp3"));
-            _player.Play();
+            try
+            {
+                _player.Open(new Uri("Views/Resources/Sounds/Bingo.mp3", UriKind.Relative));
+                _player.Play();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error playing background music: {ex.Message}");
+            }
+
         }
 
         private async void ShowRandomSyllable()
         {
             if (_currentVisibleBorder != null && _currentVisibleBorder.Child is TextBlock)
             {
-                var backImage = new Image
+                // Reset the previous border's background to the default card back
+                _currentVisibleBorder.Background = new ImageBrush
                 {
-                    Source = new BitmapImage(new Uri("D:/Project1/Atelier des Mots/Views/Resources/Images/cards.jpg")),
+                    ImageSource = new BitmapImage(new Uri("pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Kid11.jpg"))
+                };
+
+                // Reset the content to the original image
+                _currentVisibleBorder.Child = new Image
+                {
+                    Source = new BitmapImage(new Uri("pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Kid11.jpg")),
                     Stretch = Stretch.Fill,
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Center
                 };
 
-                var fadeOutAnimation = new DoubleAnimation
-                {
-                    From = 1,
-                    To = 0,
-                    Duration = TimeSpan.FromSeconds(1)
-                };
-
-                var textBlock = _currentVisibleBorder.Child as TextBlock;
-                textBlock.BeginAnimation(TextBlock.OpacityProperty, fadeOutAnimation);
-                await Task.Delay(700);
-
-                _currentVisibleBorder.Child = backImage;
                 _currentVisibleBorder = null;
             }
 
@@ -126,12 +140,21 @@ namespace Atelier_des_Mots.Views
                     if (border.Child is TextBlock)
                         return;
 
+                    // Change the background to a new image
+                    border.Background = new ImageBrush
+                    {
+                        ImageSource = new BitmapImage(new Uri("pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Syllabe2.jpeg"))
+                    };
+
+                    // Display the syllable text
                     var textBlock = new TextBlock
                     {
                         Text = randomSyllable,
-                        FontSize = 90,
+                        FontSize = 120,
                         FontWeight = FontWeights.Bold,
                         Opacity = 0,
+                        FontFamily = new FontFamily("Rockwell"), // Change the font family here
+
                         HorizontalAlignment = HorizontalAlignment.Center,
                         VerticalAlignment = VerticalAlignment.Center
                     };
@@ -141,11 +164,12 @@ namespace Atelier_des_Mots.Views
 
                     PlaySound();
 
+                    // Animate the text fading in
                     var fadeInAnimation = new DoubleAnimation
                     {
                         From = 0,
                         To = 1,
-                        Duration = TimeSpan.FromSeconds(3)
+                        Duration = TimeSpan.FromSeconds(2.5)
                     };
                     textBlock.BeginAnimation(TextBlock.OpacityProperty, fadeInAnimation);
 
@@ -153,6 +177,7 @@ namespace Atelier_des_Mots.Views
                 }
             }
         }
+
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {

@@ -26,6 +26,8 @@ C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\b
 C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\bin\Debug\net6.0-windows\Atelier des Mots.pdb
 C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\Atelier des Mots.genruntimeconfig.cache
 C:\Users\Amin Sekri\Desktop\Atelier des Mots\Atelier des Mots\Atelier des Mots\obj\Debug\net6.0-windows\ref\Atelier des Mots.dll
+D:\Project1\Atelier des Mots\bin\Debug\net6.0-windows\Views\Resources\Sounds\Bingo.mp3
+D:\Project1\Atelier des Mots\bin\Debug\net6.0-windows\Views\Resources\Sounds\Music.mp3
 D:\Project1\Atelier des Mots\bin\Debug\net6.0-windows\Atelier des Mots.exe
 D:\Project1\Atelier des Mots\bin\Debug\net6.0-windows\Atelier des Mots.deps.json
 D:\Project1\Atelier des Mots\bin\Debug\net6.0-windows\Atelier des Mots.runtimeconfig.json
@@ -49,6 +51,7 @@ D:\Project1\Atelier des Mots\obj\Debug\net6.0-windows\Views\StudentSyllablesOnly
 D:\Project1\Atelier des Mots\obj\Debug\net6.0-windows\Views\SyllableExercisePreparationView.g.cs
 D:\Project1\Atelier des Mots\obj\Debug\net6.0-windows\Views\SyllablesOnlyExerciceView.g.cs
 D:\Project1\Atelier des Mots\obj\Debug\net6.0-windows\App.g.cs
+D:\Project1\Atelier des Mots\obj\Debug\net6.0-windows\Atelier des Mots_Content.g.cs
 D:\Project1\Atelier des Mots\obj\Debug\net6.0-windows\Atelier des Mots_MarkupCompile.cache
 D:\Project1\Atelier des Mots\obj\Debug\net6.0-windows\Atelier des Mots.g.resources
 D:\Project1\Atelier des Mots\obj\Debug\net6.0-windows\Atelier des Mots.GeneratedMSBuildEditorConfig.editorconfig

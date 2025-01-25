@@ -3,32 +3,37 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
        Title="Phrase Exercise" Height="600" Width="800" Loaded="Window_Loaded">
 
-
     <!-- Background Image -->
     <Window.Background>
-        <ImageBrush ImageSource="D:/Project1/Atelier des Mots/Views/Resources/Images/Kid2.jpg" />
+        <ImageBrush ImageSource="pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Kid2.jpg" />
     </Window.Background>
 
-
-
-
-
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-        <StackPanel Name="PhraseExercisePanel" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20" Visibility="Visible">
-            <!-- Changed Visibility to Visible -->
-            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="360">
+        <StackPanel Name="PhraseExercisePanel" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Visibility="Visible">
+            <!-- Scrollable panel for words -->
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="500">
                 <WrapPanel Name="PhraseContainer" HorizontalAlignment="Center" Margin="0,0,0,20">
                     <!-- Words will be dynamically added here -->
                 </WrapPanel>
             </ScrollViewer>
 
             <!-- Button to Show Correct Phrase -->
-            <Button Name="ShowCorrectPhraseButton" Content="Show Correct Phrase" Click="ShowCorrectPhrase_Click" Width="300" FontSize="20" FontWeight="Bold" Background="LightBlue" Margin="0,0,0,10" />
+            <Button Name="ShowCorrectPhraseButton" Content="Bravo, regarde la phrase!" Click="ShowCorrectPhrase_Click" Width="400" FontSize="25" FontWeight="Bold"  Margin="0,0,0,10" />
 
-            <Border Name="PhraseAssemblyDisplay" Background="LightYellow" BorderBrush="Black" BorderThickness="2" Width="900" Height="350" Margin="0">
-                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                    <TextBlock Name="PhraseAssembledText" FontSize="55" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center" />
-                </ScrollViewer>
+            <!-- Yellow block for the assembled phrase (hidden initially) -->
+            <Border Name="PhraseAssemblyDisplay" Background="LightYellow" BorderBrush="Black" BorderThickness="2" Width="900" Height="600" Margin="0" Visibility="Collapsed">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <Image Source="pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Bravo.jpeg" Width="180" Height="180" />
+                    <TextBlock Text="Bravo!" FontSize="60" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Center" />
+
+                    <!-- TextBlock for the assembled phrase -->
+                    <TextBlock Name="PhraseAssembledText" FontSize="70" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Rockwell" />
+
+                    <!-- Container for Bravo Image and Text (hidden initially) -->
+                    <StackPanel Name="BravoPanel" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" Margin="20">
+                    </StackPanel>
+                </StackPanel>
             </Border>
         </StackPanel>
     </ScrollViewer>

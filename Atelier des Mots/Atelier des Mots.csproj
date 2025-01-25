@@ -10,22 +10,67 @@
 
   <ItemGroup>
     <None Remove="Views\Resources\Images\BackgroundWordsFlying.jpg" />
+    <None Remove="Views\Resources\Images\Box1.jpg" />
+    <None Remove="Views\Resources\Images\Box2.jpg" />
+    <None Remove="Views\Resources\Images\Bravo.jpeg" />
+    <None Remove="Views\Resources\Images\cards.jpg" />
+    <None Remove="Views\Resources\Images\Class.jpg" />
     <None Remove="Views\Resources\Images\Kid1.jpg" />
+    <None Remove="Views\Resources\Images\Kid11.jpg" />
     <None Remove="Views\Resources\Images\Kid2.jpg" />
     <None Remove="Views\Resources\Images\Kid3.jpg" />
+    <None Remove="Views\Resources\Images\Kid33.jpg" />
     <None Remove="Views\Resources\Images\Kid4.jpg" />
+    <None Remove="Views\Resources\Images\Principal.jpg" />
+    <None Remove="Views\Resources\Images\Syllabe.jpeg" />
+    <None Remove="Views\Resources\Images\Syllabe2.jpeg" />
+    <None Remove="Views\Resources\Sounds\Bingo.mp3" />
+    <None Remove="Views\Resources\Sounds\Music.mp3" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Views\Resources\Images\BackgroundWordsFlying.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Views\Resources\Images\Box1.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Resources\Images\Box2.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Resources\Images\Bravo.jpeg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Resources\Images\cards.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Resources\Images\Class.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Views\Resources\Images\Kid1.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Resources\Images\Kid11.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Views\Resources\Images\Kid2.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Views\Resources\Images\Principal.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Resources\Images\Syllabe.jpeg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Views\Resources\Images\Syllabe2.jpeg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Views\Resources\Sounds\Bingo.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Resources\Sounds\Music.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

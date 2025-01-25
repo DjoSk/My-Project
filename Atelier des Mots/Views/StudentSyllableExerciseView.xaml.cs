@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Atelier_des_Mots.Views
 {
@@ -27,10 +28,7 @@ namespace Atelier_des_Mots.Views
         {
             try
             {
-                // Open the music file
-                _player.Open(new Uri("D:/Project1/Atelier des Mots/Views/Resources/Sounds/Music.mp3"));
-
-                // Play the music once without looping
+                _player.Open(new Uri("Views/Resources/Sounds/Bingo.mp3", UriKind.Relative));
                 _player.Play();
             }
             catch (Exception ex)
@@ -73,20 +71,31 @@ namespace Atelier_des_Mots.Views
         {
             var border = new Border
             {
-                Background = Brushes.LightGray,
                 BorderBrush = Brushes.Black,
                 BorderThickness = new Thickness(2),
-                Width = 220,
-                Height = 160,
+                Width = 280,
+                Height = 150,
                 Margin = new Thickness(5),
                 Tag = syllable
             };
 
+            // Set the background image using ImageBrush
+            var imageBrush = new ImageBrush
+            {
+                ImageSource = new BitmapImage(new Uri("pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Box2.jpg")),
+                Stretch = Stretch.Fill // Ensures the image fully covers the box
+            };
+
+
+            border.Background = imageBrush;
+
             var textBlock = new TextBlock
             {
                 Text = syllable,
-                FontSize = 70,
+                FontSize = 85,
                 FontWeight = FontWeights.Bold,
+                FontFamily = new FontFamily("Rockwell"), // Change the font family here
+
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center
             };
@@ -96,21 +105,20 @@ namespace Atelier_des_Mots.Views
             return border;
         }
 
+
         private void PlayClickSound()
         {
             try
             {
-                var clickPlayer = new MediaPlayer();
-                clickPlayer.Open(new Uri("D:/Project1/Atelier des Mots/Views/Resources/Sounds/Music.mp3"));
-                clickPlayer.Play();
+                _player.Open(new Uri("Views/Resources/Sounds/Bingo.mp3", UriKind.Relative));
+                _player.Play();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error playing click sound: {ex.Message}");
+                MessageBox.Show($"Error playing background music: {ex.Message}");
             }
         }
 
-        // Assemble syllables into a word
         // Assemble syllables into a word
         private void AssembleSyllable_Click(object sender, RoutedEventArgs e)
         {
@@ -124,8 +132,11 @@ namespace Atelier_des_Mots.Views
             // Use the correct word for the current word (the syllables for the current word)
             _viewModel.AssembledWord = _viewModel.CorrectWord;
 
-            // Display the correct word in the yellow box (only the current word)
+            // Display the correct word in the yellow block
             SyllableAssembledWordText.Text = _viewModel.AssembledWord;
+
+            // Show the yellow block
+            SyllableWordAssemblyDisplay.Visibility = Visibility.Visible;
 
             // Play the background music once
             PlayBackgroundMusic();
@@ -133,10 +144,15 @@ namespace Atelier_des_Mots.Views
 
 
 
+
         private void NextWord_Click(object sender, RoutedEventArgs e)
         {
             _viewModel.SetNextWord();
             SetupSyllableExercise(); // Update the UI to show the next word's syllables
+
+            // Hide the yellow block
+            SyllableWordAssemblyDisplay.Visibility = Visibility.Collapsed;
         }
+
     }
 }
