@@ -6,7 +6,7 @@
 
     <!-- Background Image -->
     <Window.Background>
-        <ImageBrush ImageSource="pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Kid1.jpg" />
+        <ImageBrush ImageSource="pack://siteoforigin:,,,/Views/Resources/Images/Kid1.jpg" Stretch="UniformToFill" />
     </Window.Background>
     <Window.Resources>
         <!-- Define the card back image as a resource -->

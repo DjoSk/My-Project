@@ -80,11 +80,15 @@ namespace Atelier_des_Mots.Views
             };
 
             // Set the background image using ImageBrush
-            var imageBrush = new ImageBrush
+            string imagePath = "pack://siteoforigin:,,,/Views/Resources/Images/Box2.jpg";
+            ImageBrush imageBrush = new ImageBrush
             {
-                ImageSource = new BitmapImage(new Uri("pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Box2.jpg")),
-                Stretch = Stretch.Fill // Ensures the image fully covers the box
+                ImageSource = new BitmapImage(new Uri(imagePath, UriKind.Absolute)),
+                Stretch = Stretch.Fill
             };
+
+            border.Background = imageBrush;
+
 
 
             border.Background = imageBrush;

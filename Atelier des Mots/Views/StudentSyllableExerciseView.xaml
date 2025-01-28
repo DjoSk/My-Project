@@ -5,7 +5,7 @@
 
     <!-- Background Image -->
     <Window.Background>
-        <ImageBrush ImageSource="pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Kid1.jpg" />
+        <ImageBrush ImageSource="pack://siteoforigin:,,,/Views/Resources/Images/Kid1.jpg" Stretch="UniformToFill" />
     </Window.Background>
 
     <Grid>
@@ -32,8 +32,8 @@
                  Background="LightYellow" 
                 BorderBrush="Black" 
                 BorderThickness="5" 
-                Width="980" 
-                Height="327" 
+                Width="1100" 
+                Height="230" 
                 Margin="5" 
                 Visibility="Collapsed">
                             <TextBlock Name="SyllableAssembledWordText"
@@ -42,7 +42,7 @@
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
                        Text="{Binding AssembledWord}"
-                       FontFamily="Rockwell"/>
+                       FontFamily="Arial"/>
                     
                         </Border>
 

@@ -1,0 +1,20 @@
+D:\Atelier des Mots\Atelier des Mots.exe
+D:\Atelier des Mots\Views\Resources\Images\Back1.jpg
+D:\Atelier des Mots\Views\Resources\Images\BackgroundWordsFlying.jpg
+D:\Atelier des Mots\Views\Resources\Images\Box1.jpg
+D:\Atelier des Mots\Views\Resources\Images\Box2.jpg
+D:\Atelier des Mots\Views\Resources\Images\Bravo.jpeg
+D:\Atelier des Mots\Views\Resources\Images\cards.jpg
+D:\Atelier des Mots\Views\Resources\Images\Class.jpg
+D:\Atelier des Mots\Views\Resources\Images\Kid1.jpg
+D:\Atelier des Mots\Views\Resources\Images\Kid11.jpg
+D:\Atelier des Mots\Views\Resources\Images\Kid2.jpg
+D:\Atelier des Mots\Views\Resources\Images\Principal.jpg
+D:\Atelier des Mots\Views\Resources\Images\Syllabe.jpeg
+D:\Atelier des Mots\Views\Resources\Images\Syllabe2.jpeg
+D:\Atelier des Mots\Views\Resources\Sounds\Bingo.mp3
+D:\Atelier des Mots\Views\Resources\Sounds\Music.mp3
+D:\Atelier des Mots\Atelier des Mots.dll
+D:\Atelier des Mots\Atelier des Mots.deps.json
+D:\Atelier des Mots\Atelier des Mots.runtimeconfig.json
+D:\Atelier des Mots\Atelier des Mots.pdb

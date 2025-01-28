@@ -22,10 +22,13 @@ namespace Atelier_des_Mots.Views
 
             // Setup the words to be displayed
             SetupPhraseExercise();
-            string imagePath = "pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Kid2.jpg"; // Adjust as needed
-            ImageBrush backgroundBrush = new ImageBrush();
-            backgroundBrush.ImageSource = new BitmapImage(new Uri(imagePath));
-            this.Background = backgroundBrush;
+            string imagePath = "pack://siteoforigin:,,,/Views/Resources/Images/Kid2.jpg";
+            ImageBrush imageBrush = new ImageBrush
+            {
+                ImageSource = new BitmapImage(new Uri(imagePath, UriKind.Absolute)),
+                Stretch = Stretch.UniformToFill
+            };
+            this.Background = imageBrush;
         }
 
 
@@ -45,31 +48,34 @@ namespace Atelier_des_Mots.Views
 
         private void SetupPhraseExercise()
         {
-            PhraseContainer.Children.Clear(); // Clear any existing children
+            PhraseContainer.Children.Clear(); // Clear existing UI elements
+
             foreach (var word in _viewModel.DisorderedWords)
             {
-                var card = CreateWordCard(word);
-                PhraseContainer.Children.Add(card);
+                var card = CreateWordCard(word); // Create a card for each word
+                PhraseContainer.Children.Add(card); // Add it to the container
             }
         }
 
+
+
+
         private Border CreateWordCard(string word)
         {
-            // Define the image source for the background
-            var imageBrush = new ImageBrush
+            string imagePath = "pack://siteoforigin:,,,/Views/Resources/Images/Box1.jpg";
+            ImageBrush imageBrush = new ImageBrush
             {
-                ImageSource = new BitmapImage(new Uri("pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Box1.jpg")),
-                Stretch = Stretch.Fill // Ensures the image fully covers the box
+                ImageSource = new BitmapImage(new Uri(imagePath, UriKind.Absolute)),
+                Stretch = Stretch.Fill
             };
 
-            // Create the main border
             return new Border
             {
-                Background = imageBrush, // Set the image as the background
+                Background = imageBrush,
                 BorderBrush = Brushes.Black,
                 BorderThickness = new Thickness(2),
-                Width = 340, // Set the width of the box
-                Height = 160, // Set the height of the box
+                Width = 340,
+                Height = 160,
                 Margin = new Thickness(5),
                 Child = new TextBlock
                 {
@@ -77,10 +83,9 @@ namespace Atelier_des_Mots.Views
                     FontSize = 65,
                     FontWeight = FontWeights.Bold,
                     HorizontalAlignment = HorizontalAlignment.Center,
-                    FontFamily = new FontFamily("Rockwell "), // Change the font family here
-
+                    FontFamily = new FontFamily("Rockwell"),
                     VerticalAlignment = VerticalAlignment.Center,
-                    Foreground = Brushes.Black, // Ensure text is readable on the image
+                    Foreground = Brushes.Black,
                     TextWrapping = TextWrapping.Wrap
                 }
             };
@@ -88,36 +93,79 @@ namespace Atelier_des_Mots.Views
 
 
 
-        private void ShowCorrectPhrase_Click(object sender, RoutedEventArgs e)
+
+      private void ShowCorrectPhrase_Click(object sender, RoutedEventArgs e)
+{
+    try
+    {
+        if (!string.IsNullOrEmpty(_viewModel.CorrectPhrase))
+        {
+            // Display the correct phrase for the current phrase
+            PhraseAssembledText.Text = _viewModel.CorrectPhrase;
+            PhraseAssemblyDisplay.Visibility = Visibility.Visible; // Show the yellow block with the correct phrase
+
+            // Play background music or sound (optional)
+            PlayBackgroundMusic();
+
+            // Hide the disordered words temporarily
+            PhraseContainer.Visibility = Visibility.Collapsed;
+
+            // Scroll to the bottom of the ScrollViewer
+            ScrollViewer parentScrollViewer = GetParentScrollViewer(PhraseExercisePanel);
+            if (parentScrollViewer != null)
+            {
+                parentScrollViewer.ScrollToBottom();
+            }
+        }
+        else
+        {
+            MessageBox.Show("The correct phrase is not available.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+    }
+}
+
+// Helper method to find the parent ScrollViewer
+private ScrollViewer GetParentScrollViewer(DependencyObject element)
+{
+    while (element != null)
+    {
+        if (element is ScrollViewer scrollViewer)
+        {
+            return scrollViewer;
+        }
+        element = VisualTreeHelper.GetParent(element);
+    }
+    return null;
+}
+
+        private void NextPhrase_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                // Check if the correct phrase is available
-                if (!string.IsNullOrEmpty(_viewModel.CorrectPhrase))
+                if (_viewModel.HasNextPhrase())
                 {
-                    // Display the correct phrase
-                    PhraseAssembledText.Text = _viewModel.CorrectPhrase;
-
-                    // Make the yellow block visible
-                    PhraseAssemblyDisplay.Visibility = Visibility.Visible;
-
-                    // Display the Bravo panel with image and message
-                    BravoPanel.Visibility = Visibility.Visible;
-
-                    // Optionally, play a sound or animation
-                    PlayBackgroundMusic();
+                    _viewModel.SetNextPhrase(); // Update to the next phrase
+                    SetupPhraseExercise(); // Update the UI with new disordered words
+                    PhraseAssemblyDisplay.Visibility = Visibility.Collapsed; // Hide the correct phrase
+                    PhraseContainer.Visibility = Visibility.Visible; // Show the disordered words
                 }
                 else
                 {
-                    MessageBox.Show("The correct phrase is not available.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("All phrases completed!", "Congrats", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            PlayBackgroundMusic() ;
         }
+
+
+
 
 
 
@@ -125,10 +173,13 @@ namespace Atelier_des_Mots.Views
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Set the background image programmatically
-            string imagePath = "pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Kid2.jpg";
-            ImageBrush backgroundBrush = new ImageBrush();
-            backgroundBrush.ImageSource = new BitmapImage(new Uri(imagePath));
-            this.Background = backgroundBrush;
+            string imagePath = "pack://siteoforigin:,,,/Views/Resources/Images/Principal.jpg";
+            ImageBrush imageBrush = new ImageBrush
+            {
+                ImageSource = new BitmapImage(new Uri(imagePath, UriKind.Absolute)),
+                Stretch = Stretch.UniformToFill
+            };
+            this.Background = imageBrush;
         }
 
     }

@@ -39,6 +39,7 @@ namespace Atelier_des_Mots.Views
                 SyllablesOnlyContainer.Children.Add(card);
             }
         }
+
         private Border CreateSyllableBox(string syllable)
         {
             var border = new Border
@@ -54,7 +55,7 @@ namespace Atelier_des_Mots.Views
             // Initial image as the background
             var image = new Image
             {
-                Source = new BitmapImage(new Uri("pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Kid11.jpg")),
+                Source = new BitmapImage(new Uri("pack://siteoforigin:,,,/Views/Resources/Images/Syllabe2.jpeg")),
                 Stretch = Stretch.Fill,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center
@@ -71,9 +72,8 @@ namespace Atelier_des_Mots.Views
                 // Change the background to a new image
                 clickedBorder.Background = new ImageBrush
                 {
-                    ImageSource = new BitmapImage(new Uri("pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Syllabe2.jpeg"))
+                    ImageSource = new BitmapImage(new Uri("pack://siteoforigin:,,,/Views/Resources/Images/Syllabe2.jpeg"))
                 };
-
 
                 // Display the syllable text over the new background
                 clickedBorder.Child = new TextBlock
@@ -91,21 +91,17 @@ namespace Atelier_des_Mots.Views
             return border;
         }
 
-
-
-
         private void PlaySound()
         {
             try
             {
-                _player.Open(new Uri("Views/Resources/Sounds/Bingo.mp3", UriKind.Relative));
+                _player.Open(new Uri("pack://siteoforigin:,,,/Views/Resources/Sounds/Bingo.mp3", UriKind.Absolute));
                 _player.Play();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error playing background music: {ex.Message}");
             }
-
         }
 
         private async void ShowRandomSyllable()
@@ -115,13 +111,13 @@ namespace Atelier_des_Mots.Views
                 // Reset the previous border's background to the default card back
                 _currentVisibleBorder.Background = new ImageBrush
                 {
-                    ImageSource = new BitmapImage(new Uri("pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Kid11.jpg"))
+                    ImageSource = new BitmapImage(new Uri("pack://siteoforigin:,,,/Views/Resources/Images/Syllabe2.jpeg"))
                 };
 
                 // Reset the content to the original image
                 _currentVisibleBorder.Child = new Image
                 {
-                    Source = new BitmapImage(new Uri("pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Kid11.jpg")),
+                    Source = new BitmapImage(new Uri("pack://siteoforigin:,,,/Views/Resources/Images/Syllabe2.jpeg")),
                     Stretch = Stretch.Fill,
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Center
@@ -143,7 +139,7 @@ namespace Atelier_des_Mots.Views
                     // Change the background to a new image
                     border.Background = new ImageBrush
                     {
-                        ImageSource = new BitmapImage(new Uri("pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Syllabe2.jpeg"))
+                        ImageSource = new BitmapImage(new Uri("pack://siteoforigin:,,,/Views/Resources/Images/Back1.jpg"))
                     };
 
                     // Display the syllable text
@@ -154,7 +150,6 @@ namespace Atelier_des_Mots.Views
                         FontWeight = FontWeights.Bold,
                         Opacity = 0,
                         FontFamily = new FontFamily("Rockwell"), // Change the font family here
-
                         HorizontalAlignment = HorizontalAlignment.Center,
                         VerticalAlignment = VerticalAlignment.Center
                     };
@@ -177,7 +172,6 @@ namespace Atelier_des_Mots.Views
                 }
             }
         }
-
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {

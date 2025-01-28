@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Exercice de préparation des syllabes" Height="450" Width="800">
     <Grid>
-        <!-- Remove the Background attribute here, and only keep the Grid.Background section -->
+        <!-- Correct the Window.Background section -->
         <Grid.Background>
-            <ImageBrush ImageSource="pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Class.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="pack://siteoforigin:,,,/Views/Resources/Images/Class.jpg" Stretch="UniformToFill" />
         </Grid.Background>
 
         <StackPanel Margin="20">

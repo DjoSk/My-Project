@@ -38,12 +38,16 @@ namespace Atelier_des_Mots.ViewModels
 
         // Index to track the current word being displayed
         public int CurrentWordIndex { get; set; }
+        public List<string> Phrases { get; set; } = new List<string>();
+        public int CurrentPhraseIndex { get; private set; } = 0;
+
 
         // Constructor to initialize the ViewModel with empty data
         public TeacherViewModel()
         {
             DisplaySyllables1 = new List<string>(); // Initialize as an empty list
             DisorderedWords = Array.Empty<string>(); // Keep this as an empty array
+
         }
 
         // Method to set the next word in the sequence
@@ -59,6 +63,16 @@ namespace Atelier_des_Mots.ViewModels
                 AssembledWord1 = CorrectWord; // Set the assembled word to the correct word
             }
         }
+        public void SetCurrentPhraseIndex(int index)
+        {
+            if (index >= 0 && index < Phrases.Count)
+            {
+                CorrectPhrase = Phrases[index]; // Update the current phrase
+                DisorderedWords = CorrectPhrase.Split(' ')
+                                                .OrderBy(x => Guid.NewGuid())
+                                                .ToArray(); // Shuffle the words
+            }
+        }
 
         // Method to set the current word based on index
         public void SetCurrentWord(int index)
@@ -69,7 +83,19 @@ namespace Atelier_des_Mots.ViewModels
             CorrectWord = string.Join("", syllables); // Set the correct word
             AssembledWord = CorrectWord; // Store the assembled word
         }
+        public void SetNextPhrase()
+        {
+            if (HasNextPhrase())
+            {
+                CurrentPhraseIndex++; // Increment to the next phrase
+                SetCurrentPhraseIndex(CurrentPhraseIndex); // Update the CorrectPhrase and DisorderedWords
+            }
+        }
 
+        public bool HasNextPhrase()
+        {
+            return CurrentPhraseIndex + 1 < Phrases.Count;
+        }
         // Method to assemble the word by joining selected syllables
         public void AssembleWord()
         {

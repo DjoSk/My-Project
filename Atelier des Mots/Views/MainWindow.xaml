@@ -4,8 +4,10 @@
         Title="Atelier des Mots" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/principal.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="pack://siteoforigin:,,,/Views/Resources/Images/Principal.jpg" Stretch="UniformToFill" />
         </Grid.Background>
+
+
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Choisissez le type d'exercice" FontSize="35" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 

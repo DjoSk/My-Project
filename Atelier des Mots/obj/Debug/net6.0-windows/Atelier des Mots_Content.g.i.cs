@@ -8,6 +8,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/back1.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/backgroundwordsflying.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/box1.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/box2.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/bravo.jpeg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/cards.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/class.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/kid1.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/kid11.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/kid2.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/principal.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/syllabe.jpeg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/syllabe2.jpeg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/sounds/bingo.mp3")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/sounds/music.mp3")]
 

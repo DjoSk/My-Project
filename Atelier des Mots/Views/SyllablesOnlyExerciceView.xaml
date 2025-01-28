@@ -4,7 +4,7 @@
         Title="Exercice de préparation des syllabes uniquement" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Class.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="pack://siteoforigin:,,,/Views/Resources/Images/Class.jpg" Stretch="UniformToFill" />
         </Grid.Background>
         <StackPanel Margin="20">
             <TextBlock Text="Entrez les syllabes (séparez-les par des tirets « - »)" FontSize="16" Margin="0,0,0,10"/>

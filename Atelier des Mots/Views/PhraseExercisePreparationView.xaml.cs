@@ -32,16 +32,42 @@ namespace Atelier_des_Mots.Views
         // Prepare the disordered phrase exercise and display to students
         private void DisplayToStudents_Click(object sender, RoutedEventArgs e)
         {
-            string correctPhrase = CorrectPhraseInput.Text;
-            string disorderedPhrase = DisorderedPhraseOutput.Text;
+            string phrasesInput = CorrectPhraseInput.Text;
 
-            // Store the correct and disordered phrases in the ViewModel
-            _viewModel.CorrectPhrase = correctPhrase;
-            _viewModel.DisorderedWords = disorderedPhrase.Split(' ');
+            if (string.IsNullOrWhiteSpace(phrasesInput))
+            {
+                MessageBox.Show("Please enter one or more phrases separated by '/'.", "Input Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            // Split input into multiple phrases
+            var phrases = phrasesInput.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries)
+                                      .Select(p => p.Trim()) // Remove extra spaces
+                                      .ToArray();
+
+            if (phrases.Length == 0)
+            {
+                MessageBox.Show("No valid phrases found. Please check your input.", "Input Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            // Shuffle words within each phrase and store data in the ViewModel
+            
+            _viewModel.Phrases = phrases.ToList(); // Convert string[] to List<string>
+            _viewModel.SetCurrentPhraseIndex(0); // Start with the first phrase
+            _viewModel.CorrectPhrase = phrases[0]; // First phrase is the current one
+
+            // Disordered words for the first phrase
+            var words = phrases[0].Split(' ');
+            _viewModel.DisorderedWords = words.OrderBy(x => Guid.NewGuid()).ToArray();
 
             // Show student view
-            StudentPhraseExerciseView studentView = new StudentPhraseExerciseView(_viewModel);
+            var studentView = new StudentPhraseExerciseView(_viewModel);
             studentView.Show();
+
+            // Optionally clear input
+            CorrectPhraseInput.Clear();
         }
+
     }
 }
