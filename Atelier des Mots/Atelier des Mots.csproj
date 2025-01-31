@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\Resources\Data\Exercices.txt" />
     <None Remove="Views\Resources\Images\Back1.jpg" />
     <None Remove="Views\Resources\Images\BackgroundWordsFlying.jpg" />
     <None Remove="Views\Resources\Images\Box1.jpg" />
@@ -26,10 +27,15 @@
     <None Remove="Views\Resources\Images\Syllabe.jpeg" />
     <None Remove="Views\Resources\Images\Syllabe2.jpeg" />
     <None Remove="Views\Resources\Sounds\Bingo.mp3" />
+    <None Remove="Views\Resources\Sounds\Bonjour.mp3" />
+    <None Remove="Views\Resources\Sounds\MainMusic.mp3" />
     <None Remove="Views\Resources\Sounds\Music.mp3" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Views\Resources\Data\Exercices.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Views\Resources\Images\Back1.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -70,6 +76,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\Resources\Sounds\Bingo.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Resources\Sounds\Bonjour.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Resources\Sounds\MainMusic.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\Resources\Sounds\Music.mp3">

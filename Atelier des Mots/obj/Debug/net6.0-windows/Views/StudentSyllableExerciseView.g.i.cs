@@ -84,7 +84,7 @@ namespace Atelier_des_Mots.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Atelier des Mots;V1.0.0.0;component/views/studentsyllableexerciseview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Atelier des Mots;component/views/studentsyllableexerciseview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\StudentSyllableExerciseView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

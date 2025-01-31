@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/data/exercices.txt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/back1.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/backgroundwordsflying.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/box1.jpg")]
@@ -22,6 +23,8 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/syllabe.jpeg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/images/syllabe2.jpeg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/sounds/bingo.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/sounds/bonjour.mp3")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/sounds/mainmusic.mp3")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("views/resources/sounds/music.mp3")]
 
 

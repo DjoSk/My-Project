@@ -1,4 +1,5 @@
 D:\Atelier des Mots\Atelier des Mots.exe
+D:\Atelier des Mots\Views\Resources\Data\Exercices.txt
 D:\Atelier des Mots\Views\Resources\Images\Back1.jpg
 D:\Atelier des Mots\Views\Resources\Images\BackgroundWordsFlying.jpg
 D:\Atelier des Mots\Views\Resources\Images\Box1.jpg
@@ -13,6 +14,8 @@ D:\Atelier des Mots\Views\Resources\Images\Principal.jpg
 D:\Atelier des Mots\Views\Resources\Images\Syllabe.jpeg
 D:\Atelier des Mots\Views\Resources\Images\Syllabe2.jpeg
 D:\Atelier des Mots\Views\Resources\Sounds\Bingo.mp3
+D:\Atelier des Mots\Views\Resources\Sounds\Bonjour.mp3
+D:\Atelier des Mots\Views\Resources\Sounds\MainMusic.mp3
 D:\Atelier des Mots\Views\Resources\Sounds\Music.mp3
 D:\Atelier des Mots\Atelier des Mots.dll
 D:\Atelier des Mots\Atelier des Mots.deps.json

@@ -40,6 +40,8 @@ namespace Atelier_des_Mots.ViewModels
         public int CurrentWordIndex { get; set; }
         public List<string> Phrases { get; set; } = new List<string>();
         public int CurrentPhraseIndex { get; private set; } = 0;
+        public string ExerciseData { get; private set; }
+
 
 
         // Constructor to initialize the ViewModel with empty data
@@ -49,6 +51,7 @@ namespace Atelier_des_Mots.ViewModels
             DisorderedWords = Array.Empty<string>(); // Keep this as an empty array
 
         }
+
 
         // Method to set the next word in the sequence
         public void SetNextWord()

@@ -8,12 +8,14 @@ namespace Atelier_des_Mots.Views
     public partial class PhraseExercisePreparationView : Window
     {
         private TeacherViewModel _viewModel;
+        private string _phraseData;  // Store phrase exercise data
 
-        public PhraseExercisePreparationView()
+        // New constructor to accept phrase exercise data
+        public PhraseExercisePreparationView(string phraseData)  // Receive data
         {
             InitializeComponent();
-            _viewModel = new TeacherViewModel();
-            DataContext = _viewModel;
+            _phraseData = phraseData;  // Store it
+            CorrectPhraseInput.Text = _phraseData;  // Directly use the phrase data (no need for Encoding)
         }
 
         // Shuffle the words in the phrase
@@ -51,23 +53,23 @@ namespace Atelier_des_Mots.Views
                 return;
             }
 
-            // Shuffle words within each phrase and store data in the ViewModel
-            
-            _viewModel.Phrases = phrases.ToList(); // Convert string[] to List<string>
-            _viewModel.SetCurrentPhraseIndex(0); // Start with the first phrase
-            _viewModel.CorrectPhrase = phrases[0]; // First phrase is the current one
+            // Initialize ViewModel if it's null
+            if (_viewModel == null)
+            {
+                _viewModel = new TeacherViewModel();
+            }
 
-            // Disordered words for the first phrase
+            _viewModel.Phrases = phrases.ToList(); // Store phrases in ViewModel
+            _viewModel.SetCurrentPhraseIndex(0); // Start with the first phrase
+            _viewModel.CorrectPhrase = phrases[0]; // First phrase is the correct one
+
+            // Shuffle words for the first phrase
             var words = phrases[0].Split(' ');
             _viewModel.DisorderedWords = words.OrderBy(x => Guid.NewGuid()).ToArray();
 
-            // Show student view
+            // Open Student View with the ViewModel
             var studentView = new StudentPhraseExerciseView(_viewModel);
             studentView.Show();
-
-            // Optionally clear input
-            CorrectPhraseInput.Clear();
         }
-
     }
 }

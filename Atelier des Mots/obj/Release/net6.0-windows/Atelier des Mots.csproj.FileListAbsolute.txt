@@ -1,3 +1,4 @@
+D:\Project1\Atelier des Mots\bin\Release\net6.0-windows\Views\Resources\Data\Exercices.txt
 D:\Project1\Atelier des Mots\bin\Release\net6.0-windows\Views\Resources\Images\Back1.jpg
 D:\Project1\Atelier des Mots\bin\Release\net6.0-windows\Views\Resources\Images\BackgroundWordsFlying.jpg
 D:\Project1\Atelier des Mots\bin\Release\net6.0-windows\Views\Resources\Images\Box1.jpg
@@ -12,6 +13,8 @@ D:\Project1\Atelier des Mots\bin\Release\net6.0-windows\Views\Resources\Images\P
 D:\Project1\Atelier des Mots\bin\Release\net6.0-windows\Views\Resources\Images\Syllabe.jpeg
 D:\Project1\Atelier des Mots\bin\Release\net6.0-windows\Views\Resources\Images\Syllabe2.jpeg
 D:\Project1\Atelier des Mots\bin\Release\net6.0-windows\Views\Resources\Sounds\Bingo.mp3
+D:\Project1\Atelier des Mots\bin\Release\net6.0-windows\Views\Resources\Sounds\Bonjour.mp3
+D:\Project1\Atelier des Mots\bin\Release\net6.0-windows\Views\Resources\Sounds\MainMusic.mp3
 D:\Project1\Atelier des Mots\bin\Release\net6.0-windows\Views\Resources\Sounds\Music.mp3
 D:\Project1\Atelier des Mots\bin\Release\net6.0-windows\Atelier des Mots.exe
 D:\Project1\Atelier des Mots\bin\Release\net6.0-windows\Atelier des Mots.deps.json

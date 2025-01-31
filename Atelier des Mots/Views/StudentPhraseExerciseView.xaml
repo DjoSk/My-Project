@@ -35,7 +35,7 @@
                     <TextBlock Text="Bravo!" FontSize="60" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Center" />
 
                     <!-- TextBlock for the assembled phrase -->
-                    <TextBlock Name="PhraseAssembledText" FontSize="70" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Rockwell" />
+                    <TextBlock Name="PhraseAssembledText" FontSize="70" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Segoe UI" />
 
                     <!-- Container for Bravo Image and Text (hidden initially) -->
                     <StackPanel Name="BravoPanel" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" Margin="20">

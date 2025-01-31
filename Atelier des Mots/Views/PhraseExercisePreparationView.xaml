@@ -8,12 +8,12 @@
         </Grid.Background>
         <StackPanel Margin="20">
             <TextBlock Text="Entrez la phrase dans le bon ordre:" FontSize="16" Margin="0,0,0,10"/>
-            <TextBox Name="CorrectPhraseInput" FontSize="16" Margin="0,0,0,10"/>
+            <TextBox Name="CorrectPhraseInput" FontSize="16" Margin="0,0,0,10" FontFamily="Arial" TextOptions.TextFormattingMode="Ideal"/>
 
             <Button Content="Disperser la phrase" Click="DisorderPhrase_Click" Width="200" Margin="10"/>
 
             <TextBlock Text="Phrase désordonnée:" FontSize="16" Margin="20,10,0,0"/>
-            <TextBox Name="DisorderedPhraseOutput" FontSize="16" Margin="0,0,0,10" IsReadOnly="True"/>
+            <TextBox Name="DisorderedPhraseOutput" FontSize="16" Margin="0,0,0,10" IsReadOnly="True" FontFamily="Arial" TextOptions.TextFormattingMode="Ideal"/>
 
             <Button Content="Affichage aux étudiants" Click="DisplayToStudents_Click" Width="200" Margin="10"/>
         </StackPanel>

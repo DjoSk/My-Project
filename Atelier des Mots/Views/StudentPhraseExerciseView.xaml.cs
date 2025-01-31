@@ -22,6 +22,8 @@ namespace Atelier_des_Mots.Views
 
             // Setup the words to be displayed
             SetupPhraseExercise();
+
+            // Set the background image for the window
             string imagePath = "pack://siteoforigin:,,,/Views/Resources/Images/Kid2.jpg";
             ImageBrush imageBrush = new ImageBrush
             {
@@ -31,8 +33,7 @@ namespace Atelier_des_Mots.Views
             this.Background = imageBrush;
         }
 
-
-
+        // Play background music
         private void PlayBackgroundMusic()
         {
             try
@@ -46,6 +47,7 @@ namespace Atelier_des_Mots.Views
             }
         }
 
+        // Setup phrase exercise
         private void SetupPhraseExercise()
         {
             PhraseContainer.Children.Clear(); // Clear existing UI elements
@@ -57,9 +59,7 @@ namespace Atelier_des_Mots.Views
             }
         }
 
-
-
-
+        // Create word card for each word
         private Border CreateWordCard(string word)
         {
             string imagePath = "pack://siteoforigin:,,,/Views/Resources/Images/Box1.jpg";
@@ -79,11 +79,11 @@ namespace Atelier_des_Mots.Views
                 Margin = new Thickness(5),
                 Child = new TextBlock
                 {
-                    Text = word,
+                    Text = word,  // Special characters like é, è should display here if UTF-8 is used
                     FontSize = 65,
                     FontWeight = FontWeights.Bold,
                     HorizontalAlignment = HorizontalAlignment.Center,
-                    FontFamily = new FontFamily("Rockwell"),
+                    FontFamily = new FontFamily("Segoe UI"),
                     VerticalAlignment = VerticalAlignment.Center,
                     Foreground = Brushes.Black,
                     TextWrapping = TextWrapping.Wrap
@@ -91,57 +91,56 @@ namespace Atelier_des_Mots.Views
             };
         }
 
-
-
-
-      private void ShowCorrectPhrase_Click(object sender, RoutedEventArgs e)
-{
-    try
-    {
-        if (!string.IsNullOrEmpty(_viewModel.CorrectPhrase))
+        // Show the correct phrase
+        private void ShowCorrectPhrase_Click(object sender, RoutedEventArgs e)
         {
-            // Display the correct phrase for the current phrase
-            PhraseAssembledText.Text = _viewModel.CorrectPhrase;
-            PhraseAssemblyDisplay.Visibility = Visibility.Visible; // Show the yellow block with the correct phrase
-
-            // Play background music or sound (optional)
-            PlayBackgroundMusic();
-
-            // Hide the disordered words temporarily
-            PhraseContainer.Visibility = Visibility.Collapsed;
-
-            // Scroll to the bottom of the ScrollViewer
-            ScrollViewer parentScrollViewer = GetParentScrollViewer(PhraseExercisePanel);
-            if (parentScrollViewer != null)
+            try
             {
-                parentScrollViewer.ScrollToBottom();
+                if (!string.IsNullOrEmpty(_viewModel.CorrectPhrase))
+                {
+                    // Display the correct phrase for the current phrase
+                    PhraseAssembledText.Text = _viewModel.CorrectPhrase;
+                    PhraseAssemblyDisplay.Visibility = Visibility.Visible; // Show the yellow block with the correct phrase
+
+                    // Play background music or sound (optional)
+                    PlayBackgroundMusic();
+
+                    // Hide the disordered words temporarily
+                    PhraseContainer.Visibility = Visibility.Collapsed;
+
+                    // Scroll to the bottom of the ScrollViewer
+                    ScrollViewer parentScrollViewer = GetParentScrollViewer(PhraseExercisePanel);
+                    if (parentScrollViewer != null)
+                    {
+                        parentScrollViewer.ScrollToBottom();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The correct phrase is not available.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        else
-        {
-            MessageBox.Show("The correct phrase is not available.", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-    }
-    catch (Exception ex)
-    {
-        MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-    }
-}
 
-// Helper method to find the parent ScrollViewer
-private ScrollViewer GetParentScrollViewer(DependencyObject element)
-{
-    while (element != null)
-    {
-        if (element is ScrollViewer scrollViewer)
+        // Helper method to find the parent ScrollViewer
+        private ScrollViewer GetParentScrollViewer(DependencyObject element)
         {
-            return scrollViewer;
+            while (element != null)
+            {
+                if (element is ScrollViewer scrollViewer)
+                {
+                    return scrollViewer;
+                }
+                element = VisualTreeHelper.GetParent(element);
+            }
+            return null;
         }
-        element = VisualTreeHelper.GetParent(element);
-    }
-    return null;
-}
 
+        // Move to the next phrase
         private void NextPhrase_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -164,15 +163,9 @@ private ScrollViewer GetParentScrollViewer(DependencyObject element)
             }
         }
 
-
-
-
-
-
-
+        // Set the background image programmatically when window is loaded
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            // Set the background image programmatically
             string imagePath = "pack://siteoforigin:,,,/Views/Resources/Images/Principal.jpg";
             ImageBrush imageBrush = new ImageBrush
             {
@@ -181,6 +174,5 @@ private ScrollViewer GetParentScrollViewer(DependencyObject element)
             };
             this.Background = imageBrush;
         }
-
     }
 }
