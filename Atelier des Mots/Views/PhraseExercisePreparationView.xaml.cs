@@ -1,6 +1,8 @@
 ﻿using Atelier_des_Mots.ViewModels;
 using System;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows;
 
 namespace Atelier_des_Mots.Views
@@ -10,7 +12,7 @@ namespace Atelier_des_Mots.Views
         private TeacherViewModel _viewModel;
         private string _phraseData;  // Store phrase exercise data
 
-        // New constructor to accept phrase exercise data
+        // Constructor to accept phrase exercise data
         public PhraseExercisePreparationView(string phraseData)  // Receive data
         {
             InitializeComponent();
@@ -32,7 +34,7 @@ namespace Atelier_des_Mots.Views
         }
 
         // Prepare the disordered phrase exercise and display to students
-        private void DisplayToStudents_Click(object sender, RoutedEventArgs e)
+        public void DisplayToStudents_Click(object sender, RoutedEventArgs e)
         {
             string phrasesInput = CorrectPhraseInput.Text;
 
@@ -70,6 +72,30 @@ namespace Atelier_des_Mots.Views
             // Open Student View with the ViewModel
             var studentView = new StudentPhraseExerciseView(_viewModel);
             studentView.Show();
+            Close();
+        }
+
+        // Method to read file with UTF-8 encoding
+        public static string LoadPhraseData()
+        {
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Views", "Resources", "Data", "Exercices.txt");
+
+            try
+            {
+                if (File.Exists(filePath))
+                {
+                    // Ensure UTF-8 encoding
+                    return File.ReadAllText(filePath, Encoding.UTF8);
+                }
+                else
+                {
+                    return "⚠️ Fichier introuvable !";
+                }
+            }
+            catch (Exception ex)
+            {
+                return $"⚠️ Erreur de lecture du fichier : {ex.Message}";
+            }
         }
     }
 }

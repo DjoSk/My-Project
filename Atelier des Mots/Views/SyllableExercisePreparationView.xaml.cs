@@ -23,6 +23,7 @@ namespace Atelier_des_Mots.Views
             LoadSyllableExerciseData();
         }
 
+
         private void LoadSyllableExerciseData()
         {
             string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Atelier Des Mots");
@@ -83,7 +84,7 @@ namespace Atelier_des_Mots.Views
             return syllables;
         }
 
-        private void DisplayToStudents_Click(object sender, RoutedEventArgs e)
+        public void DisplayToStudents_Click(object sender, RoutedEventArgs e)
         {
             string syllables = SyllableInput.Text;
 
@@ -101,10 +102,14 @@ namespace Atelier_des_Mots.Views
             _viewModel.SetCurrentWord(0);
             _viewModel.CorrectWord = string.Join(" ", words.Select(word => word.Replace("-", "")));
 
+            // Automatically show the student view
             StudentSyllableExerciseView studentView = new StudentSyllableExerciseView(_viewModel);
             studentView.Show();
 
             SyllableInput.Clear();
+
+            Close();
         }
-    }
+    
+}
 }

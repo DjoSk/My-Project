@@ -47,7 +47,7 @@ namespace Atelier_des_Mots.Views
                 BorderBrush = Brushes.Black,
                 BorderThickness = new Thickness(2),
                 Width = 260,
-                Height = 180,
+                Height = 190,
                 Margin = new Thickness(10),
                 Tag = syllable
             };
@@ -79,7 +79,7 @@ namespace Atelier_des_Mots.Views
                 clickedBorder.Child = new TextBlock
                 {
                     Text = syllableText,
-                    FontSize = 82,
+                    FontSize = 90,
                     FontWeight = FontWeights.Bold,
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Center

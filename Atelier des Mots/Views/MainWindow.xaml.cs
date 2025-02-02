@@ -157,24 +157,39 @@ namespace Atelier_des_Mots.Views
         }
 
 
+
         private void SyllablesExercise_Click(object sender, RoutedEventArgs e)
         {
+            // Open the Syllable Exercise Preparation View
             SyllableExercisePreparationView syllablePreparationView = new SyllableExercisePreparationView();
             syllablePreparationView.Show();
+
+            // Trigger the button click event in SyllableExercisePreparationView automatically
+            syllablePreparationView.DisplayToStudents_Click(sender, e);
         }
+
 
         private void DisorderedPhraseExercise_Click(object sender, RoutedEventArgs e)
         {
+            // Open the Phrase Exercise Preparation View
             PhraseExercisePreparationView phraseView = new PhraseExercisePreparationView(PhraseExerciseData);
             phraseView.Show();
+
+            // Trigger the button click event in PhraseExercisePreparationView automatically
+            phraseView.DisplayToStudents_Click(sender, e);
         }
+
 
 
 
         private void SyllablesOnlyExercise_Click(object sender, RoutedEventArgs e)
         {
+            // Open the Syllables Only Exercise Preparation View
             SyllablesOnlyExercisePreparationView syllablesOnlyView = new SyllablesOnlyExercisePreparationView();
             syllablesOnlyView.Show();
+
+            // Trigger the button click event in SyllablesOnlyExercisePreparationView automatically
+            syllablesOnlyView.DisplayToStudents_Click(sender, e);
         }
     }
 }

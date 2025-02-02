@@ -21,6 +21,7 @@ namespace Atelier_des_Mots.Views
             LoadSyllablesFromFile();
         }
 
+
         // Load syllables from the file upon opening
         private void LoadSyllablesFromFile()
         {
@@ -100,7 +101,7 @@ namespace Atelier_des_Mots.Views
 
 
         // Prepare the syllables exercise and display to students
-        private void DisplayToStudents_Click(object sender, RoutedEventArgs e)
+        public void DisplayToStudents_Click(object sender, RoutedEventArgs e)
         {
             string syllablesInput = SyllablesInput.Text;
 
@@ -117,6 +118,7 @@ namespace Atelier_des_Mots.Views
             // Show the student view
             StudentSyllablesOnlyExerciseView studentView = new StudentSyllablesOnlyExerciseView(_viewModel);
             studentView.Show();
+            Close();
         }
     }
 }
