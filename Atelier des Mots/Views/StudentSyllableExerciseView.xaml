@@ -8,6 +8,72 @@
         <ImageBrush ImageSource="pack://siteoforigin:,,,/Views/Resources/Images/Kid1.jpg" Stretch="UniformToFill" />
     </Window.Background>
 
+    <Window.Resources>
+        <!-- Fun, Playful Button Style -->
+        <Style x:Key="FunButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="400"/>
+            <Setter Property="Height" Value="100"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FFFB8C00" Offset="0"/>
+                        <GradientStop Color="#FFFFC107" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" BlurRadius="15" ShadowDepth="7"/>
+                </Setter.Value>
+            </Setter>
+
+            <!-- Button Template -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="40"
+                                Padding="{TemplateBinding Padding}" BorderThickness="0">
+                            <Grid RenderTransformOrigin="0.5,0.5">
+                                <!-- Subtle shadow for 3D effect -->
+                                <Border Background="Black" CornerRadius="40"
+                                        Opacity="0.2" Height="Auto" Width="Auto"
+                                        VerticalAlignment="Bottom" Margin="0,8,0,0"/>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <!-- Hover Effect (Simple scaling) -->
+            <Style.Triggers>
+                <!-- Scale up effect on mouse over -->
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+
+                <!-- Return to original size when mouse leaves -->
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <!-- MediaElement for Background Music -->
         <MediaElement x:Name="BackgroundMusic"
@@ -17,36 +83,24 @@
                       Visibility="Collapsed" />
 
         <!-- Main Content -->
-        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <ScrollViewer Name="OuterScrollViewer" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
-                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="350">
+                <!-- Inner ScrollViewer for syllables -->
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="439">
                     <WrapPanel Name="SyllableContainer" HorizontalAlignment="Center" Margin="0,0,0,20">
                         <!-- Syllables will be added dynamically here -->
                     </WrapPanel>
                 </ScrollViewer>
 
-                <Button Content="Construis le mot magique !" Click="AssembleSyllable_Click" Width="550" FontSize="30" FontWeight="Bold" Background="LightGreen" Margin="0,0,0,20" />
-                <Button Content="Avance vers un autre mot magique !" Click="NextWord_Click" Width="550" FontSize="30" FontWeight="Bold" Background="LightBlue" Margin="0,0,0,20" />
+                <!-- Buttons with Fun Style -->
+                <Button Content="Verifier" Click="AssembleSyllable_Click" Style="{StaticResource FunButtonStyle}" Margin="0,0,0,20"/>
+                <Button Content="Mot suivant" Click="NextWord_Click" Style="{StaticResource FunButtonStyle}" Margin="0,0,0,20"/>
 
-                <Border Name="SyllableWordAssemblyDisplay" 
-                 Background="LightYellow" 
-                BorderBrush="Black" 
-                BorderThickness="5" 
-                Width="1100" 
-                Height="230" 
-                Margin="5" 
-                Visibility="Collapsed">
-                            <TextBlock Name="SyllableAssembledWordText"
-                       FontSize="110"
-                       FontWeight="Bold"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       Text="{Binding AssembledWord}"
-                       FontFamily="Arial"/>
-                    
-                        </Border>
-
+                <Border Name="SyllableWordAssemblyDisplay" Background="LightYellow" BorderBrush="Black" BorderThickness="5" Width="1100" Height="220" Margin="5" Visibility="Collapsed">
+                    <TextBlock Name="SyllableAssembledWordText" FontSize="110" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding AssembledWord}" FontFamily="Arial"/>
+                </Border>
             </StackPanel>
         </ScrollViewer>
+
     </Grid>
 </Window>

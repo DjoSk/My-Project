@@ -1,21 +1,117 @@
 ﻿<Window x:Class="Atelier_des_Mots.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Atelier des Mots" Height="450" Width="800">
+        Title="Atelier des Mots" Height="500" Width="850">
+
+    <Window.Resources>
+        <!-- Fun, Playful 3D Button Style -->
+        <Style x:Key="FunButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="400"/>
+            <Setter Property="Height" Value="100"/>
+            <Setter Property="FontSize" Value="24"/>
+            <!-- Adjust FontSize here -->
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FFFB8C00" Offset="0"/>
+                        <!-- Orange -->
+                        <GradientStop Color="#FFFFC107" Offset="6"/>
+                        <!-- Yellow -->
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" BlurRadius="670" ShadowDepth="30"/>
+                </Setter.Value>
+            </Setter>
+
+            <!-- Fun Button Template -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="40"
+                                Padding="{TemplateBinding Padding}" BorderThickness="2">
+                            <Grid>
+                                <!-- Subtle Shadow for 3D Effect -->
+                                <Border Background="Black" CornerRadius="40"
+                                        Opacity="0.5" Height="Auto" Width="Auto"
+                                        VerticalAlignment="Bottom" Margin="0,8,0,0"/>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+
+                        <!-- Effects on Hover and Click -->
+                        <ControlTemplate.Triggers>
+                            <!-- Glow Effect on Hover -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Color="#FFFF9800" Offset="1"/>
+                                            <!-- Brighter Orange -->
+                                            <GradientStop Color="#FFFFEB3B" Offset="1"/>
+                                            <!-- Brighter Yellow -->
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="White" BlurRadius="25" ShadowDepth="10"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.15" ScaleY="1.15"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                            <!-- Press Effect (Bouncy Press) -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.92" ScaleY="0.92"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="3"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="pack://siteoforigin:,,,/Views/Resources/Images/Principal.jpg" Stretch="UniformToFill" />
         </Grid.Background>
 
-
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Choisissez le type d'exercice" FontSize="35" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+            <TextBlock Text="✨ Choisissez le type d'exercice ✨" 
+               FontSize="50" FontWeight="Bold" FontFamily="Comic Sans MS"
+               Foreground="Black" HorizontalAlignment="Center" Margin="0,0,0,30"/>
 
-            <!-- Buttons to select exercise type -->
-            <Button Content="exercice sur les syllabes seulement" Click="SyllablesOnlyExercise_Click" Width="300" Margin="10"/>
+            <!-- Buttons with Fun Style -->
+            <Button Content="🎵 - LIRE LES SYLLABES" Click="SyllablesOnlyExercise_Click"
+            Style="{StaticResource FunButtonStyle}" Margin="0,10,0,15"/>
 
-            <Button Content="Exercice sur les mots syllabiques" Click="SyllablesExercise_Click" Width="300" Margin="10"/>
-            <Button Content="Exercice sur les phrases désordonnées" Click="DisorderedPhraseExercise_Click" Width="300" Margin="10"/>
+            <Button Content="🧩 - TROUVER LE MOT" Click="SyllablesExercise_Click"
+            Style="{StaticResource FunButtonStyle}" Margin="0,10,0,15"/>
+
+            <Button Content="✨ - TROUVER LA PHRASE" Click="DisorderedPhraseExercise_Click"
+            Style="{StaticResource FunButtonStyle}" Margin="0,10,0,15"/>
         </StackPanel>
+
     </Grid>
 </Window>

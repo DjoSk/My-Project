@@ -1,0 +1,84 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="FunButtonStyle" TargetType="Button">
+        <Setter Property="Width" Value="Auto"/>
+        <!-- Auto width to accommodate text -->
+        <Setter Property="Height" Value="90"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FFFB8C00" Offset="0"/>
+                    <!-- Orange -->
+                    <GradientStop Color="#FFFFC107" Offset="1"/>
+                    <!-- Yellow -->
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="15"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect Color="Black" BlurRadius="15" ShadowDepth="7"/>
+            </Setter.Value>
+        </Setter>
+
+        <!-- Button Template -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="40"
+                        Padding="{TemplateBinding Padding}" BorderThickness="0">
+                        <Grid>
+                            <Border Background="Black" CornerRadius="40"
+                                Opacity="0.2" Height="Auto" Width="Auto"
+                                VerticalAlignment="Bottom" Margin="0,8,0,0"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#FFFF9800" Offset="0"/>
+                                        <GradientStop Color="#FFFFEB3B" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="White" BlurRadius="25" ShadowDepth="10"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="RenderTransform">
+                                <Setter.Value>
+                                    <ScaleTransform ScaleX="1.15" ScaleY="1.15"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="RenderTransform">
+                                <Setter.Value>
+                                    <ScaleTransform ScaleX="0.92" ScaleY="0.92"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="3"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+</ResourceDictionary>

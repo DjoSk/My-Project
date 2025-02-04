@@ -74,13 +74,13 @@ namespace Atelier_des_Mots.Views
                 Background = imageBrush,
                 BorderBrush = Brushes.Black,
                 BorderThickness = new Thickness(2),
-                Width = 340,
-                Height = 160,
+                Width = 370,
+                Height = 109,
                 Margin = new Thickness(5),
                 Child = new TextBlock
                 {
                     Text = word,  // Special characters like é, è should display here if UTF-8 is used
-                    FontSize = 65,
+                    FontSize = 60,
                     FontWeight = FontWeights.Bold,
                     HorizontalAlignment = HorizontalAlignment.Center,
                     FontFamily = new FontFamily("Segoe UI"),
@@ -166,7 +166,7 @@ namespace Atelier_des_Mots.Views
         // Set the background image programmatically when window is loaded
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            string imagePath = "pack://siteoforigin:,,,/Views/Resources/Images/Principal.jpg";
+            string imagePath = "pack://siteoforigin:,,,/Views/Resources/Images/Kid2.jpg";
             ImageBrush imageBrush = new ImageBrush
             {
                 ImageSource = new BitmapImage(new Uri(imagePath, UriKind.Absolute)),

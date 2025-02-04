@@ -144,10 +144,16 @@ namespace Atelier_des_Mots.Views
 
             // Play the background music once
             PlayBackgroundMusic();
+
+            // Scroll to the bottom of the outer ScrollViewer
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                if (OuterScrollViewer != null)
+                {
+                    OuterScrollViewer.ScrollToBottom();
+                }
+            }), System.Windows.Threading.DispatcherPriority.Background);
         }
-
-
-
 
         private void NextWord_Click(object sender, RoutedEventArgs e)
         {
@@ -156,7 +162,31 @@ namespace Atelier_des_Mots.Views
 
             // Hide the yellow block
             SyllableWordAssemblyDisplay.Visibility = Visibility.Collapsed;
+
+            // Scroll to the bottom of the ScrollViewer
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                if (OuterScrollViewer != null)
+                {
+                    OuterScrollViewer.ScrollToBottom();
+                }
+            }), System.Windows.Threading.DispatcherPriority.Background);
         }
+
+
+        private ScrollViewer GetParentScrollViewer(DependencyObject element)
+        {
+            while (element != null)
+            {
+                if (element is ScrollViewer scrollViewer)
+                {
+                    return scrollViewer;
+                }
+                element = VisualTreeHelper.GetParent(element);
+            }
+            return null;
+        }
+
 
     }
 }

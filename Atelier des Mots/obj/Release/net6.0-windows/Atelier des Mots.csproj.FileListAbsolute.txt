@@ -51,3 +51,4 @@ D:\Project1\Atelier des Mots\obj\Release\net6.0-windows\refint\Atelier des Mots.
 D:\Project1\Atelier des Mots\obj\Release\net6.0-windows\Atelier des Mots.pdb
 D:\Project1\Atelier des Mots\obj\Release\net6.0-windows\Atelier des Mots.genruntimeconfig.cache
 D:\Project1\Atelier des Mots\obj\Release\net6.0-windows\ref\Atelier des Mots.dll
+D:\Project1\Atelier des Mots\obj\Release\net6.0-windows\Views\Resources\Styles\ButtonStyles.baml

@@ -53,6 +53,7 @@ D:\Project1\Atelier des Mots\obj\Debug\net6.0-windows\Atelier des Mots.csproj.As
 D:\Project1\Atelier des Mots\obj\Debug\net6.0-windows\Resources\Styles.baml
 D:\Project1\Atelier des Mots\obj\Debug\net6.0-windows\Views\MainWindow.baml
 D:\Project1\Atelier des Mots\obj\Debug\net6.0-windows\Views\PhraseExercisePreparationView.baml
+D:\Project1\Atelier des Mots\obj\Debug\net6.0-windows\Views\Resources\Styles\ButtonStyles.baml
 D:\Project1\Atelier des Mots\obj\Debug\net6.0-windows\Views\StudentPhraseExerciseView.baml
 D:\Project1\Atelier des Mots\obj\Debug\net6.0-windows\Views\StudentSyllableExerciseView.baml
 D:\Project1\Atelier des Mots\obj\Debug\net6.0-windows\Views\StudentSyllablesOnlyExerciseView.baml

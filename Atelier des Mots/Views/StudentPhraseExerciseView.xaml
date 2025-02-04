@@ -8,38 +8,92 @@
         <ImageBrush ImageSource="pack://siteoforigin:,,,/Views/Resources/Images/Kid2.jpg" Stretch="UniformToFill" />
     </Window.Background>
 
+    <Window.Resources>
+        <!-- Fun, Playful Button Style -->
+        <Style x:Key="FunButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="400"/>
+            <Setter Property="Height" Value="100"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FFFB8C00" Offset="0"/>
+                        <GradientStop Color="#FFFFC107" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" BlurRadius="15" ShadowDepth="7"/>
+                </Setter.Value>
+            </Setter>
+
+            <!-- Button Template -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="40"
+                                Padding="{TemplateBinding Padding}" BorderThickness="0">
+                            <Grid RenderTransformOrigin="0.5,0.5">
+                                <!-- Subtle shadow for 3D effect -->
+                                <Border Background="Black" CornerRadius="40"
+                                        Opacity="0.2" Height="Auto" Width="Auto"
+                                        VerticalAlignment="Bottom" Margin="0,8,0,0"/>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <!-- Hover Effect (Simple scaling) -->
+            <Style.Triggers>
+                <!-- Scale up effect on mouse over -->
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+
+                <!-- Return to original size when mouse leaves -->
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
         <StackPanel Name="PhraseExercisePanel" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Visibility="Visible">
             <!-- Scrollable panel for words -->
             <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="500">
-                <WrapPanel Name="PhraseContainer" HorizontalAlignment="Center" Margin="0,0,0,20">
+                <WrapPanel Name="PhraseContainer" HorizontalAlignment="Center" Margin="0,0,0,10">
                     <!-- Words will be dynamically added here -->
                 </WrapPanel>
             </ScrollViewer>
 
-            <!-- Button to Show Correct Phrase -->
-            <Button Name="ShowCorrectPhraseButton" Content="Bravo, regarde la phrase!" Click="ShowCorrectPhrase_Click" Width="400" FontSize="25" FontWeight="Bold"  Margin="0,0,0,10" />
-            <Button Name="NextPhraseButton" 
-        Content="Next Phrase" 
-        Click="NextPhrase_Click" 
-        Width="400" 
-        FontSize="25" 
-        FontWeight="Bold" 
-        Margin="0,10,0,10" />
+            <!-- Buttons with Fun Style -->
+            <Button Name="ShowCorrectPhraseButton" Content="Voici La Phrase" Click="ShowCorrectPhrase_Click" Style="{StaticResource FunButtonStyle}" Margin="0,0,0,15" />
+            <Button Name="NextPhraseButton" Content="Phrase suivante" Click="NextPhrase_Click" Style="{StaticResource FunButtonStyle}" Margin="0,0,0,10" />
 
             <!-- Yellow block for the assembled phrase (hidden initially) -->
-            <Border Name="PhraseAssemblyDisplay" Background="LightYellow" BorderBrush="Black" BorderThickness="2" Width="900" Height="600" Margin="0" Visibility="Collapsed">
+            <Border Name="PhraseAssemblyDisplay" Background="LightYellow" BorderBrush="Black" BorderThickness="2" Width="950" Height="650" Margin="0" Visibility="Collapsed">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-
-                    <Image Source="pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Bravo.jpeg" Width="180" Height="180" />
-                    <TextBlock Text="Bravo!" FontSize="60" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Center" />
-
+                    <Image Source="pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Bravo.jpeg" Width="170" Height="170" />
+                    <TextBlock Text="Bravo!" FontSize="55" FontStyle="Italic" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Center" />
                     <!-- TextBlock for the assembled phrase -->
-                    <TextBlock Name="PhraseAssembledText" FontSize="70" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Segoe UI" />
-
-                    <!-- Container for Bravo Image and Text (hidden initially) -->
-                    <StackPanel Name="BravoPanel" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" Margin="20">
-                    </StackPanel>
+                    <TextBlock Name="PhraseAssembledText" FontSize="65" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Segoe UI" />
                 </StackPanel>
             </Border>
         </StackPanel>
