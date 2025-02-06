@@ -99,18 +99,18 @@
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="✨ Choisissez le type d'exercice ✨" 
-               FontSize="50" FontWeight="Bold" FontFamily="Comic Sans MS"
+               FontSize="60" FontWeight="Bold" FontFamily="Comic Sans MS"
                Foreground="Black" HorizontalAlignment="Center" Margin="0,0,0,30"/>
 
             <!-- Buttons with Fun Style -->
             <Button Content="🎵 - LIRE LES SYLLABES" Click="SyllablesOnlyExercise_Click"
-            Style="{StaticResource FunButtonStyle}" Margin="0,10,0,15"/>
+            Style="{StaticResource FunButtonStyle}" Margin="0,10,0,15" FontSize="35" Width="550"/>
 
             <Button Content="🧩 - TROUVER LE MOT" Click="SyllablesExercise_Click"
-            Style="{StaticResource FunButtonStyle}" Margin="0,10,0,15"/>
+            Style="{StaticResource FunButtonStyle}" Margin="0,10,0,15" FontSize="35" Width="550"/>
 
             <Button Content="✨ - TROUVER LA PHRASE" Click="DisorderedPhraseExercise_Click"
-            Style="{StaticResource FunButtonStyle}" Margin="0,10,0,15"/>
+            Style="{StaticResource FunButtonStyle}" Margin="0,10,0,15" FontSize="35" Width="550"/>
         </StackPanel>
 
     </Grid>

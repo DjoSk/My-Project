@@ -74,13 +74,13 @@ namespace Atelier_des_Mots.Views
                 Background = imageBrush,
                 BorderBrush = Brushes.Black,
                 BorderThickness = new Thickness(2),
-                Width = 370,
+                Width = 440,
                 Height = 109,
                 Margin = new Thickness(5),
                 Child = new TextBlock
                 {
                     Text = word,  // Special characters like é, è should display here if UTF-8 is used
-                    FontSize = 60,
+                    FontSize = 65,
                     FontWeight = FontWeights.Bold,
                     HorizontalAlignment = HorizontalAlignment.Center,
                     FontFamily = new FontFamily("Segoe UI"),
@@ -174,5 +174,10 @@ namespace Atelier_des_Mots.Views
             };
             this.Background = imageBrush;
         }
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close(); // Close the window
+        }
+
     }
 }

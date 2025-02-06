@@ -17,6 +17,28 @@
 
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+            <!-- Close Button at Top Left -->
+            <Button Width="40" Height="40"
+        HorizontalAlignment="Left" Margin="5"
+        Background="Blue" Foreground="White"
+        FontWeight="Bold" BorderThickness="0"
+        Click="CloseButton_Click">
+                <!-- Back Arrow Icon -->
+                <TextBlock Text="←" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <Button.Triggers>
+                    <!-- Flash effect on hover -->
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <!-- Flash effect: quickly changing color -->
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                    To="White" Duration="0:0:0.2" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
             <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="700">
                 <WrapPanel Name="SyllablesOnlyContainer" HorizontalAlignment="Center" Margin="0,0,0,10">
                     <!-- Buttons will be added dynamically -->

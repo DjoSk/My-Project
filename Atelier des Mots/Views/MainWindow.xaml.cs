@@ -147,7 +147,7 @@ namespace Atelier_des_Mots.Views
             try
             {
                 _secondPlayer.Open(new Uri("Views/Resources/Sounds/Bonjour.mp3", UriKind.Relative));
-                _secondPlayer.Volume = 0.9; // Adjust volume (40%)
+                _secondPlayer.Volume = 1.2; // Adjust volume (40%)
                 _secondPlayer.Play();
             }
             catch (Exception ex)

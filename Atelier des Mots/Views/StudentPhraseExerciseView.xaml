@@ -76,6 +76,30 @@
 
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
         <StackPanel Name="PhraseExercisePanel" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Visibility="Visible">
+
+            <!-- Close Button at Top Left -->
+            <Button Width="40" Height="40"
+        HorizontalAlignment="Left" Margin="5"
+        Background="Blue" Foreground="White"
+        FontWeight="Bold" BorderThickness="0"
+        Click="CloseButton_Click">
+                <!-- Back Arrow Icon -->
+                <TextBlock Text="←" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                <Button.Triggers>
+                    <!-- Flash effect on hover -->
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <!-- Flash effect: quickly changing color -->
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                    To="White" Duration="0:0:0.2" AutoReverse="True"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+
             <!-- Scrollable panel for words -->
             <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Height="500">
                 <WrapPanel Name="PhraseContainer" HorizontalAlignment="Center" Margin="0,0,0,10">
@@ -84,16 +108,16 @@
             </ScrollViewer>
 
             <!-- Buttons with Fun Style -->
-            <Button Name="ShowCorrectPhraseButton" Content="Voici La Phrase" Click="ShowCorrectPhrase_Click" Style="{StaticResource FunButtonStyle}" Margin="0,0,0,15" />
-            <Button Name="NextPhraseButton" Content="Phrase suivante" Click="NextPhrase_Click" Style="{StaticResource FunButtonStyle}" Margin="0,0,0,10" />
+            <Button Name="ShowCorrectPhraseButton" Content="Voici La Phrase" Click="ShowCorrectPhrase_Click" Style="{StaticResource FunButtonStyle}" Margin="0,0,0,15" FontSize="40" />
+            <Button Name="NextPhraseButton" Content="Phrase suivante" Click="NextPhrase_Click" Style="{StaticResource FunButtonStyle}" Margin="0,0,0,10"  FontSize="40" />
 
             <!-- Yellow block for the assembled phrase (hidden initially) -->
             <Border Name="PhraseAssemblyDisplay" Background="LightYellow" BorderBrush="Black" BorderThickness="2" Width="950" Height="650" Margin="0" Visibility="Collapsed">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="pack://application:,,,/Atelier des Mots;component/Views/Resources/Images/Bravo.jpeg" Width="170" Height="170" />
-                    <TextBlock Text="Bravo!" FontSize="55" FontStyle="Italic" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Center" />
+                    <TextBlock Text="Bravo!" FontSize="60" FontStyle="Italic" FontWeight="Bold" Foreground="Green" HorizontalAlignment="Center" />
                     <!-- TextBlock for the assembled phrase -->
-                    <TextBlock Name="PhraseAssembledText" FontSize="65" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Segoe UI" />
+                    <TextBlock Name="PhraseAssembledText" FontSize="75" FontWeight="Bold" TextWrapping="Wrap" TextAlignment="Center" FontFamily="Segoe UI" />
                 </StackPanel>
             </Border>
         </StackPanel>

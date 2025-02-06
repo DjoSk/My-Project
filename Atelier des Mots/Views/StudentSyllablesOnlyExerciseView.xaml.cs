@@ -46,8 +46,8 @@ namespace Atelier_des_Mots.Views
             {
                 BorderBrush = Brushes.Black,
                 BorderThickness = new Thickness(2),
-                Width = 260,
-                Height = 190,
+                Width = 340,
+                Height = 152,
                 Margin = new Thickness(10),
                 Tag = syllable
             };
@@ -79,7 +79,7 @@ namespace Atelier_des_Mots.Views
                 clickedBorder.Child = new TextBlock
                 {
                     Text = syllableText,
-                    FontSize = 90,
+                    FontSize = 100,
                     FontWeight = FontWeights.Bold,
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Center
@@ -180,5 +180,10 @@ namespace Atelier_des_Mots.Views
                 ShowRandomSyllable();
             }
         }
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close(); // Close the window
+        }
+
     }
 }

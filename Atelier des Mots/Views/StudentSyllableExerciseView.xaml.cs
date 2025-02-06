@@ -73,7 +73,7 @@ namespace Atelier_des_Mots.Views
             {
                 BorderBrush = Brushes.Black,
                 BorderThickness = new Thickness(2),
-                Width = 280,
+                Width = 290,
                 Height = 150,
                 Margin = new Thickness(5),
                 Tag = syllable
@@ -96,7 +96,7 @@ namespace Atelier_des_Mots.Views
             var textBlock = new TextBlock
             {
                 Text = syllable,
-                FontSize = 85,
+                FontSize = 95,
                 FontWeight = FontWeights.Bold,
                 FontFamily = new FontFamily("Rockwell"), // Change the font family here
 
@@ -186,6 +186,11 @@ namespace Atelier_des_Mots.Views
             }
             return null;
         }
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close(); // Close the window
+        }
+
 
 
     }
